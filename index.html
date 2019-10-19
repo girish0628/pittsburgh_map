@@ -66,19 +66,56 @@
     <!-- Sidebar -->
     <ul class="sidebar toggled navbar-nav">     
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
+             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-circle"></i>
           <span>Details</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item active" href="blank.html">Blank Page</a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown" id="details">         
+          <span id="close" class="close">x</span>
+          <p class="details-header">Municipality: Wilkinsburg</p>
+          <hr/>
+          <dl class="multiple-table">
+              <dt>Low Response Score:</dt>
+              <dd><p id="low-mod-percent">00.00%</p> </dd>
+          </dl>
+          <figure>
+              <div id="container">
+                <div id="line-bar" class="line-bar"></div>              
+              </div> 
+              <figcaption>Score Percentile</figcaption>
+            </figure>
+              <p class="block-info-header">This block has x conditions than x% of other Wilkinsburg block groups.</p>
+              <hr class="hr-line"/>            
+              <span>Block information </span>
+              <dl class="multiple-table">            
+                  <dt>Zip Code:</dt>
+                  <dd>40.05% </dd>
+                  <dt>Population:</dt>
+                  <dd>40.05% </dd>
+              </dl>
+              <hr class="hr-line"/>      
+              <dl class="multiple-table">            
+                  <dt>                     
+                      <div id="poverty">
+                          <div id="poverty-bar" class="line-bar" style="height: 25px;margin-top: -2px;"></div>
+                      </div>
+                  </dt>
+                  <dd>Below poverty: 33% </dd>
+                  <dt>                      
+                      <div id="white"></div>
+                  </dt>                  
+                  <dd>White: 27.8% </dd>      
+                  <dt>                    
+                      <div id="poverty-new"></div>
+                  </dt>
+                  <dd>Below poverty: 33% </dd>
+                  <dt>                      
+                      <div id="white-new"></div>
+                  </dt>
+                  
+                  <dd>White: 27.8% </dd>
+              </dl>        
         </div>
       </li>      
       <li class="nav-item dropdown">
@@ -87,14 +124,8 @@
           <span>Indicators</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item active" href="blank.html">Blank Page</a>
+          <h6 class="dropdown-header">Indicators:</h6>
+          
         </div>
       </li> 
       <li class="nav-item dropdown">
@@ -103,14 +134,8 @@
           <span>Rank</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item active" href="blank.html">Blank Page</a>
+          <h6 class="dropdown-header">Rank</h6>
+         
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -119,14 +144,8 @@
           <span>Data Upload</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item active" href="blank.html">Blank Page</a>
+          <h6 class="dropdown-header">Data Upload:</h6>
+         
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -135,14 +154,8 @@
           <span>Report/Export</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item active" href="blank.html">Blank Page</a>
+          <h6 class="dropdown-header">Export:</h6>
+        
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -151,32 +164,21 @@
           <span>About</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item active" href="blank.html">Blank Page</a>
+          <h6 class="dropdown-header">About:</h6>
+         
         </div>
       </li> 
     </ul>
 
     <div id="content-wrapper">
       <div id="map">
-      </div>
-      <!-- <div class="container-fluid">
-
- 
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="index.html">Dashboard</a>
-          </li>
-          <li class="breadcrumb-item active">Blank Page</li>
-        </ol>
-      </div> -->
-      <!-- /.container-fluid -->
+          <div class="l-center">
+              <p>Hard-to-Count Communities</p>
+              <div class="blk-grp" id="geo-level">Block group</div>
+              <div class="blk-grp" id="geo-location">Wilkinsburg</div>
+              <div class="info-footer">Drag to change map display</div>
+           </div>
+      </div>     
 
       <!-- Sticky Footer -->
       <footer class="sticky-footer">

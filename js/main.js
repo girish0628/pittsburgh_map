@@ -1,5 +1,6 @@
 $('#close').on('click', function(){
-  $('#sidebar').toggleClass('active');
+  $('#details').removeClass("show");
+ 
   $('#close').toggleClass('active');
 });
 
@@ -76,8 +77,9 @@ function style(feature) {
 		
 			layer.on('click', function () {
         // this.setStyle({'fillColor': 'green'});
-			  $('#sidebar').removeClass("active");
-        $('#sidebar > .sidebar-header')[0].innerHTML = `Municipality: ${feature.properties.Muncipality}`;
+			  $('#details').addClass("show");
+        $('#details > .details-header')[0].innerHTML = `Municipality: ${feature.properties.Muncipality}`;
+        $('#geo-location').html(`${feature.properties.Muncipality}`);
         $('#low-mod-percent').text(`${(feature.properties.LowModPercentage * 100).toFixed(2)}%`);
         
        var t = d3.scaleLinear()
@@ -117,7 +119,7 @@ var map = L.map('map', {
 		layers: [streets, blkgrp_lowmod2015_muncipal]
   });
   
-  
+  map.zoomControl.setPosition('bottomright');
 var baseLayers = {
 	"Grayscale": grayscale,
   "Streets": streets,

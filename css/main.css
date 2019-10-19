@@ -184,7 +184,7 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   width: 100px;
   margin-left: 20px;  
 }
-
+/* 
 #sidebar {
   background: #ffffffcf;
   text-align: center;
@@ -194,8 +194,6 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   -moz-box-shadow: 10px 10px 5px -8px rgba(138,135,138,1);
   box-shadow: 4px 4px 6px -4px rgba(138,135,138,1);
   white-space: nowrap;
-  /* min-width: 250px; */
-  /* max-width: 250px; */
   transition: all 0.3s;
   position: absolute;
   z-index: 1000;
@@ -219,9 +217,24 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   font-weight: bold;
   line-height: 15px;
   text-align: left; 
+} */
+
+.dropdown-menu.show {
+  background: #ffffffcf;
+  text-align: center;
+  width: 340px;
+  font-size: 15px;
+  -webkit-box-shadow: 10px 10px 5px -8px rgba(138,135,138,1);
+  -moz-box-shadow: 10px 10px 5px -8px rgba(138,135,138,1);
+  white-space: nowrap;
+  min-width: 250px;
+  transition: all 0.3s;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+  overflow-y: scroll;
+  max-height: 400px;
 }
-
-
 /* ---------------------------------------------------
   MEDIAQUERIES
 ----------------------------------------------------- */
