@@ -3,6 +3,9 @@ $('#close').on('click', function(){
  
   $('#close').toggleClass('active');
 });
+$('.dropdown-menu').click(function(e) {
+  e.stopPropagation();
+});
 
 let domain_arr = [];
 const color_array = ['#fcf18f', '#ade1ad', '#8dc4c2', '#9ca7c3', '#a17ea8'];
@@ -10,6 +13,10 @@ function uniqueId(){
   return Math.floor(Math.random() * 26) + Date.now()
 }
 
+function collapseCard(obj){
+  let id = $(obj).attr("datatarget");
+  $(id).toggleClass("show")
+}
 function createContainer(...args){
   var id = uniqueId();
   var main_container = {
@@ -106,8 +113,6 @@ function style(feature) {
     
   });
 
-
- 
 var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
     streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets',   attribution: mbAttr}),
     osm_lyr = L.tileLayer( osm_url, {attribution: '&copy; ' + mapLink + ' Contributors', maxZoom: maxZoom,});
@@ -115,7 +120,8 @@ var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
 
 var map = L.map('map', {
 		center: center,
-		zoom: zoom,
+    zoom: zoom,
+    attributionControl: false,
 		layers: [streets, blkgrp_lowmod2015_muncipal]
   });
   

@@ -74,7 +74,7 @@
           <i class="fa fa-circle"></i>
           <span>Details</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown" id="details">         
+        <div class="dropdown-menu details" aria-labelledby="pagesDropdown" id="details">         
           <span id="close" class="close">x</span>
           <p class="details-header">Municipality: Wilkinsburg</p>
           <hr/>
@@ -105,7 +105,7 @@
                       </div>
                   </dt>
                   <dd>Below poverty: 33% </dd>
-                  <dt>                      
+                  <!-- <dt>                      
                       <div id="white"></div>
                   </dt>                  
                   <dd>White: 27.8% </dd>      
@@ -117,18 +117,119 @@
                       <div id="white-new"></div>
                   </dt>
                   
-                  <dd>White: 27.8% </dd>
+                  <dd>White: 27.8% </dd> -->
               </dl>        
         </div>
       </li>      
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="indicators" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-binoculars"></i>
           <span>Indicators</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Indicators:</h6>
-          
+        <div class="dropdown-menu details" aria-labelledby="indicators">
+          <span id="close" class="close">x</span>
+          <h6 class="dropdown-header">View Indicators</h6>
+           <hr class="hr-line"/> 
+          <p class="block-info-header">Select an indicator to view on the map. Expand indicator categories to see more. 
+          </p>
+           <hr class="hr-line"/> 
+          <!-- <h6 class="dropdown-header">Demographic</h6>  -->
+          <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" onclick="collapseCard(this)" datatarget="#collapseOne">
+                        Demographic
+                    </button>
+                  </h2>
+                </div>
+            
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                      <table class="table">                
+                          <tbody>
+                            <tr>                    
+                              <td>
+                                <button type="button" class="btn btn-secondary">White</button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="right" title="Details">
+                                      <i class="fa fa-info"></i>
+                                  </button>
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                    <i class="fa fa-map"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>                    
+                              <td>
+                                <button type="button" class="btn btn-secondary">Black</button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="right" title="Details">
+                                      <i class="fa fa-info"></i>
+                                  </button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                      <i class="fa fa-map"></i>
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr>                    
+                              <td>
+                                <button type="button" class="btn btn-secondary">Hispanic</button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="right" title="Details">
+                                      <i class="fa fa-info"></i>
+                                  </button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                      <i class="fa fa-map"></i>
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr>                    
+                              <td>
+                                <button type="button" class="btn btn-secondary">Adult 65+</button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="right" title="Details">
+                                      <i class="fa fa-info"></i>
+                                  </button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                      <i class="fa fa-map"></i>
+                                  </button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" onclick="collapseCard(this)" datatarget="#collapseTwo">
+                        Economic
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, 
+                  </div>
+                </div>
+              </div>   
+          </div>
+              
+           <hr class="hr-line"/> 
         </div>
       </li> 
       <li class="nav-item dropdown">

@@ -219,7 +219,7 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   text-align: left; 
 } */
 
-#details {
+.details {
   background: #ffffffcf;
   text-align: center;
   width: 340px;
