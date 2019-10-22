@@ -280,6 +280,7 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
 .borderless td, .borderless th {
   border: none;
   text-align: left;
+  padding: 0.25rem;
 }
 
 .btn-indicator{
@@ -291,13 +292,13 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
 .btn-indicator:hover{
   width: 100px;
   color: #fff;
-  background-color: #686161;
+  background-color: #2EA5AA;
   border-color: #646060;
 }
 .btn-ico{
   color: #fff;
-  background-color: #FFB355;
-  border-color: #FFB355;
+  background-color: #E1B355;
+  border-color: #E1B355;
   width: 40px;
 }
 .btn-ico:hover{
@@ -305,4 +306,21 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   background-color:  rgb(245, 156, 47);
   border-color: rgb(245, 156, 47);
   width: 40px;
+}
+.btn-indicator-list{
+  /* width: 100px; */
+  color: #fff;
+  background-color: #2EA5AA;
+  border-color: #2EA5AA;
+  border-radius: 0;
+}
+.btn-indicator-list:hover{
+  /* width: 100px; */
+  color: #fff;
+  background-color: rgb(52, 137, 139);
+  border-color: rgb(52, 137, 139);
+  border-radius: 0;
+}
+.card-header {
+  padding: 0px;
 }
