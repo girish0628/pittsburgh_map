@@ -274,15 +274,35 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   height: 24px;
   width: 100px;
 }
-/* #leftThing {
-  width: 40px;
-  background-color: blue;
+.indicator-header{
+  background-color: #2FA5A9;
 }
-#content {
-  width: 40px;
-  background-color: green;
+.borderless td, .borderless th {
+  border: none;
+  text-align: left;
 }
-#rightThing {
+
+.btn-indicator{
+  width: 100px;
+  color: #fff;
+  background-color: #A6A6A6;
+  border-color: #A6A6A6;
+}
+.btn-indicator:hover{
+  width: 100px;
+  color: #fff;
+  background-color: #686161;
+  border-color: #646060;
+}
+.btn-ico{
+  color: #fff;
+  background-color: #FFB355;
+  border-color: #FFB355;
   width: 40px;
-  background-color: yellow;
-} */
+}
+.btn-ico:hover{
+  color: #fff;
+  background-color:  rgb(245, 156, 47);
+  border-color: rgb(245, 156, 47);
+  width: 40px;
+}
