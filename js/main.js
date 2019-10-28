@@ -1,8 +1,8 @@
-$('#close').on('click', function(){
-  $('#details').removeClass("show");
+// $('.close').on('click', function(){
+//   $('#details').removeClass("show");
  
-  $('#close').toggleClass('active');
-});
+//   $('#close').toggleClass('active');
+// });
 $('.dropdown-menu').click(function(e) {
   e.stopPropagation();
 });
@@ -13,6 +13,10 @@ function uniqueId(){
   return Math.floor(Math.random() * 26) + Date.now()
 }
 
+function close_panel(obj){
+  obj.parentElement.classList.remove("show");
+  
+}
 function collapseCard(obj){
   let id = $(obj).attr("datatarget");
   $(id).toggleClass("show")

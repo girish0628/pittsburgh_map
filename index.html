@@ -75,7 +75,7 @@
           <span>Details</span>
         </a>
         <div class="dropdown-menu details" aria-labelledby="pagesDropdown" id="details">         
-          <span id="close" class="close">x</span>
+          <span id="close" class="close" onclick="close_panel(this)">x</span>
           <p class="details-header">Municipality: Wilkinsburg</p>
           <hr/>
           <dl class="multiple-table">
@@ -127,10 +127,10 @@
           <span>Indicators</span>
         </a>
         <div class="dropdown-menu details" aria-labelledby="indicators">
-          <span id="close" class="close">x</span>
-          <h6 class="dropdown-header">View Indicators</h6>
+          <span class="close" onclick="close_panel(this)">x</span>
+          <h6 class="dropdown-header indicator-header-list">View Indicators</h6>
            <hr class="hr-line"/> 
-          <p class="block-info-header">Select an indicator to view on the map. Expand indicator categories to see more. 
+          <p class="block-info-header indicator-info">Select an indicator to view on the map. Expand indicator categories to see more. 
           </p>
            <hr class="hr-line"/> 
           <!-- <h6 class="dropdown-header">Demographic</h6>  -->

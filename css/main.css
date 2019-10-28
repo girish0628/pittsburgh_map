@@ -1,6 +1,7 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
 }
 html, body, #map {
     height: 100%;
@@ -127,7 +128,9 @@ html, body, #map {
 } */
 .close{
   cursor: pointer;
-
+  float: left;
+  font-size: 1.2rem;
+  color: #000000;
   transform: translate(0%, -50%);
   margin-top: 10px;
 }
@@ -135,7 +138,10 @@ html, body, #map {
   white-space: pre-wrap;
   font-size: smaller;
   text-align: justify;
-  padding: 0 30px;
+  padding: 0 30px; 
+}
+.indicator-info{
+  margin-bottom: -0.5rem;
 }
 /* dl.multiple-table { border-bottom: 1px solid #999; } */
 
@@ -293,7 +299,7 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   width: 100px;
   color: #fff;
   background-color: #2EA5AA;
-  border-color: #646060;
+  border-color: #2EA5AA;
 }
 .btn-ico{
   color: #fff;
@@ -324,3 +330,8 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
 .card-header {
   padding: 0px;
 }
+.indicator-header-list{
+  font-size: 1.5rem;
+  color: #111315;
+}
+.dropdown-menu::-webkit-scrollbar { width: 0 !important }
