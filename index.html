@@ -233,15 +233,59 @@
         </div>
       </li> 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-level-up"></i>
-          <span>Rank</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Rank</h6>
-         
-        </div>
-      </li>
+          <a class="nav-link dropdown-toggle" href="#" id="indicators" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-level-up"></i>
+              <span>Rank</span>
+          </a>
+          <div class="dropdown-menu details" aria-labelledby="indicators">
+            <span class="close" onclick="close_panel(this)">x</span>
+            <h6 class="dropdown-header indicator-header-list">Rank</h6>
+             <hr class="hr-line"/> 
+            <p class="block-info-header indicator-info">Select locations using the search bar. Census blocks within your selected geography will then be ranked by the selected indicators. 
+            </p>
+             <hr class="hr-line"/> 
+            <!-- <h6 class="dropdown-header">Demographic</h6>  -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="control-group">
+                            <!-- <label for="input-tags">Tags:</label> -->
+                            <input type="text" id="input-tags" 
+                            class="" value="awesome,neat,yeah">
+                          </div>
+
+                        <!-- <div class="input-group">
+                            <input class="form-control py-2 rounded-pill mr-1 pr-5" type="text" value="" 
+                              id="input-tagsq" class="input-tags demo-default" value="awesome,neat"
+                              placeholder="Enter locations…">
+                            <span class="input-group-append">
+                                <button class="btn rounded-pill border-0 ml-n5" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div> -->
+
+                        
+
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="input-group">
+                            <input class="form-control rounded-pill py-2 pr-5 mr-1 bg-transparent" type="search" value="" placeholder="Select variables">
+                            <span class="input-group-append">
+                                <div class="input-group-text border-0 bg-transparent ml-n5"></div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <br/>             
+            </div>
+                
+             <hr class="hr-line"/> 
+          </div>
+        </li> 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-cloud-upload"></i>
@@ -338,7 +382,20 @@
   <script src="vendor/d3/d3.v5.min.js"></script>
   <script src="vendor/d3/d3-legend.min.js"></script>
   <script src="js/constant.js"></script>    
-  <script src="js/main.js"></script>  
+  <script src="js/main.js"></script>    
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jqueryui.js"></script>
+  <script src="js/selectize.min.js"></script>  
+  <script src="js/index.js"></script>
+  <script>
+    $('#input-tags').selectize({
+					delimiter: ',',
+					persist: false,
+					onDelete: function(values) {
+						return confirm(values.length > 1 ? 'Are you sure you want to remove these ' + values.length + ' items?' : 'Are you sure you want to remove "' + values[0] + '"?');
+					}
+				});
+      </script>
 </body>
 
 </html>
