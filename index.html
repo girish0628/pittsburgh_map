@@ -251,7 +251,8 @@
                         <div class="control-group">
                             <!-- <label for="input-tags">Tags:</label> -->
                             <input type="text" id="input-tags" 
-                            class="" value="awesome,neat,yeah">
+                            class="" 
+                            value="">
                           </div>
 
                         <!-- <div class="input-group">
@@ -388,13 +389,31 @@
   <script src="js/selectize.min.js"></script>  
   <script src="js/index.js"></script>
   <script>
+    // $('#input-tags').selectize({
+		// 			delimiter: ',',
+		// 			persist: false,
+		// 			onDelete: function(values) {
+		// 				return confirm(values.length > 1 ? 'Are you sure you want to remove these ' + values.length + ' items?' : 'Are you sure you want to remove "' + values[0] + '"?');
+    //       },
+          
+    //     });
+    let muncipality
+      $.getJSON("data/blkgrp_lowmod2015_muncipal.geojson",blkgrp_data=>{
+          muncipality = [...new Set(blkgrp_data.features.map(x => x.properties))]
+      });
+ 
     $('#input-tags').selectize({
-					delimiter: ',',
-					persist: false,
-					onDelete: function(values) {
-						return confirm(values.length > 1 ? 'Are you sure you want to remove these ' + values.length + ' items?' : 'Are you sure you want to remove "' + values[0] + '"?');
-					}
-				});
+            valueField: 'Muncipality',
+            labelField: 'Muncipality',
+            searchField: 'Muncipality',
+            options: [],
+            load: function(query, callback) {
+              if (!query.length) return callback();
+              callback(muncipality);              
+            }               
+        });
+
+
       </script>
 </body>
 
