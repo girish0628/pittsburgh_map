@@ -237,7 +237,7 @@
               <i class="fa fa-level-up"></i>
               <span>Rank</span>
           </a>
-          <div class="dropdown-menu details" aria-labelledby="indicators">
+          <div class="dropdown-menu details" aria-labelledby="indicators" style="height: 350px;">
             <span class="close" onclick="close_panel(this)">x</span>
             <h6 class="dropdown-header indicator-header-list">Rank</h6>
              <hr class="hr-line"/> 
@@ -273,12 +273,20 @@
                 <br/>
                 <div class="row">
                     <div class="col-sm">
-                        <div class="input-group">
-                            <input class="form-control rounded-pill py-2 pr-5 mr-1 bg-transparent" type="search" value="" placeholder="Select variables">
+                        <div class="control-group">
+                            <!-- <label for="input-tags">Tags:</label> -->
+                            <input type="text" id="variables" 
+                            class="" 
+                            value="">
+                          </div>
+
+                        <!-- <div class="input-group">
+                            <input class="form-control rounded-pill py-2 pr-5 mr-1 bg-transparent" type="search" 
+                              id="variables" value="" placeholder="Select variables">
                             <span class="input-group-append">
                                 <div class="input-group-text border-0 bg-transparent ml-n5"></div>
                             </span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <br/>             
@@ -397,7 +405,23 @@
     //       },
           
     //     });
-    let muncipality
+
+  
+    let muncipality, variables = [ 
+      {"variable":"Female_No_HB_CEN_2010"}, {"variable":"NH_White_alone_CEN_2010"},
+      {"variable":"Pop_65plus_CEN_2010"}, {"variable":"Rel_Under_6_CEN_2010"},
+      {"variable":"Males_CEN_2010"}, {"variable":"MrdCple_HHD_CEN_2010"}, 
+      {"variable":"Pop_25_44_CEN_2010"}, {"variable":"Vacant_Units_CEN_2010"}, 
+      {"variable":"College_ACS_10_14"}, {"variable":"Med_HHD_Inc_BG_ACS_10_14"}, 
+      {"variable":"Pop_45_64_CEN_2010"},{"variable":"Tot_Prns_in_HHD_CEN_2010"}, 
+      {"variable":"HHD_Moved_in_ACS_10_14"}, {"variable":"Hispanic_CEN_2010"}, 
+      {"variable":"Single_Unit_ACS_10_14"}, {"variable":"Tot_Population_CEN_2010"}, 
+      {"variable":"Prs_Blw_Pov_Lev_ACS_10_14"},  {"variable":"Diff_HU_1yr_Ago_ACS_10_14"}, 
+      {"variable":"Pop_5_17_CEN_2010"}, {"variable":"NH_Blk_alone_CEN_2010"}, 
+      {"variable":"Sngl_Prns_HHD_CEN_2010"}, {"variable":"Not_HS_Grad_ACS_10_14"}, 
+      {"variable":"Med_House_Value_BG_ACS_10_14"}, {"variable":"Low_Response_Score"}, 
+      {"variable":"Mail_Return_Rate_CEN_2010"}];
+
       $.getJSON("data/blkgrp_lowmod2015_muncipal.geojson",blkgrp_data=>{
           muncipality = [...new Set(blkgrp_data.features.map(x => x.properties))]
       });
@@ -410,6 +434,16 @@
             load: function(query, callback) {
               if (!query.length) return callback();
               callback(muncipality);              
+            }               
+        });
+        $('#variables').selectize({
+            valueField: 'variable',
+            labelField: 'variable',
+            searchField: 'variable',
+            options: [],
+            load: function(query, callback) {
+              if (!query.length) return callback();
+              callback(variables);              
             }               
         });
 
