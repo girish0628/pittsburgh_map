@@ -238,6 +238,7 @@
               <span>Rank</span>
           </a>
           <div class="dropdown-menu details" aria-labelledby="indicators" style="height: 350px;">
+            <div id="indicators-content">
             <span class="close" onclick="close_panel(this)">x</span>
             <h6 class="dropdown-header indicator-header-list">Rank</h6>
              <hr class="hr-line"/> 
@@ -252,8 +253,8 @@
                             <!-- <label for="input-tags">Tags:</label> -->
                             <input type="text" id="input-tags" 
                             class="" 
-                            value="">
-                          </div>
+                            value=""/>
+                        </div>
 
                         <!-- <div class="input-group">
                             <input class="form-control py-2 rounded-pill mr-1 pr-5" type="text" value="" 
@@ -292,8 +293,10 @@
                 <br/>             
             </div>
                 
-             <hr class="hr-line"/> 
+             <hr class="hr-line"/>             
           </div>
+          <button type="button" class="btn btn-primary float-left ml-4" onclick="indicator_content(this)">Submit</button>
+        </div>
         </li> 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -430,19 +433,28 @@
             valueField: 'Muncipality',
             labelField: 'Muncipality',
             searchField: 'Muncipality',
+            persist: true,
+            createOnBlur: true,	          
+            openOnFocus: false,
+	          closeAfterSelect: true,
+            maxItems: 3,
             options: [],
             load: function(query, callback) {
+             
               if (!query.length) return callback();
               callback(muncipality);              
-            }               
+            },
+                    
         });
         $('#variables').selectize({
             valueField: 'variable',
             labelField: 'variable',
+            maxItems: 3,
             searchField: 'variable',
             options: [],
             load: function(query, callback) {
               if (!query.length) return callback();
+             
               callback(variables);              
             }               
         });

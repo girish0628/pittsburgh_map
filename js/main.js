@@ -3,7 +3,11 @@
  
 //   $('#close').toggleClass('active');
 // });
-
+function indicator_content(obj){
+  $('#indicators-content').toggleClass('d-none');
+ obj.innerHTML === 'Submit'? obj.innerHTML = 'Back': obj.innerHTML = 'Submit'
+ 
+}
 
 $('.dropdown-menu').click(function(e) {
   e.stopPropagation();
