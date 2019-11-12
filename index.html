@@ -127,6 +127,7 @@
           <span>Indicators</span>
         </a>
         <div class="dropdown-menu details" aria-labelledby="indicators">
+          <div id="indicator-demographic">
           <span class="close" onclick="close_panel(this)">x</span>
           <h6 class="dropdown-header indicator-header-list">View Indicators</h6>
            <hr class="hr-line"/> 
@@ -134,7 +135,7 @@
           </p>
            <hr class="hr-line"/> 
           <!-- <h6 class="dropdown-header">Demographic</h6>  -->
-          <div class="accordion" id="accordionExample">
+          <div class="accordion" id="demographic">
               <div class="card">
                 <div class="card-header" id="headingOne">
                   <h2 class="mb-0">
@@ -144,7 +145,7 @@
                   </h2>
                 </div>
             
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#demographic">
                   <div class="card-body">
                       <table class="table borderless">                
                           <tbody>
@@ -153,7 +154,8 @@
                                 <button type="button" class="btn btn-indicator">White</button>
                               </td>
                               <td>
-                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                          data-placement="right" title="Details" onclick="indicator_content(this)">
                                       <i class="fa fa-info"></i>
                                   </button>
                               </td>
@@ -168,7 +170,8 @@
                                 <button type="button" class="btn btn-indicator">Black</button>
                               </td>
                               <td>
-                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                    data-placement="right" title="Details" onclick="indicator_content(this)">
                                       <i class="fa fa-info"></i>
                                   </button>
                               </td>
@@ -208,6 +211,111 @@
                                   </button>
                               </td>
                             </tr>
+                            <tr>                    
+                              <td>
+                                <button type="button" class="btn btn-indicator">18-24 yrs</button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                      <i class="fa fa-info"></i>
+                                  </button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                      <i class="fa fa-map"></i>
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr>                    
+                              <td>
+                                <button type="button" class="btn btn-indicator">Under 6 yrs</button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                      <i class="fa fa-info"></i>
+                                  </button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                      <i class="fa fa-map"></i>
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr>                    
+                              <td>
+                                <button type="button" class="btn btn-indicator">Males</button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                      <i class="fa fa-info"></i>
+                                  </button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                      <i class="fa fa-map"></i>
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr>                    
+                              <td>
+                                <button type="button" class="btn btn-indicator">Single Parent</button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                      <i class="fa fa-info"></i>
+                                  </button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                      <i class="fa fa-map"></i>
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr>                    
+                              <td>
+                                <button type="button" class="btn btn-indicator">LRS</button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                      <i class="fa fa-info"></i>
+                                  </button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                      <i class="fa fa-map"></i>
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr>                    
+                              <td>
+                                <button type="button" class="btn btn-indicator">Mail Return</button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                      <i class="fa fa-info"></i>
+                                  </button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                      <i class="fa fa-map"></i>
+                                  </button>
+                              </td>
+                            </tr>
+                            <tr>                    
+                              <td>
+                                <button type="button" class="btn btn-indicator">Population</button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                      <i class="fa fa-info"></i>
+                                  </button>
+                              </td>
+                              <td>
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                      <i class="fa fa-map"></i>
+                                  </button>
+                              </td>
+                            </tr>
                           </tbody>
                         </table>
                   </div>
@@ -226,23 +334,54 @@
                     Anim pariatur cliche reprehenderit, 
                   </div>
                 </div>
-              </div>   
-          </div>
+              </div> 
               
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button  type="button" class="btn btn-indicator-list btn-lg btn-block collapsed" onclick="collapseCard(this)" datatarget="#collapseThree">
+                      Housing
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, 
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button  type="button" class="btn btn-indicator-list btn-lg btn-block collapsed" onclick="collapseCard(this)" datatarget="#collapseFour">
+                      Education
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, 
+                  </div>
+                </div>
+              </div>
+          </div>              
            <hr class="hr-line"/> 
+           </div>
+           <button type="button" id="demo-btn" class="btn btn-primary float-left ml-4 d-none" onclick="indicator_content()">Back</button>
         </div>
       </li> 
       <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="indicators" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="rank" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-level-up"></i>
               <span>Rank</span>
           </a>
-          <div class="dropdown-menu details" aria-labelledby="indicators" style="height: 350px;">
+          <div class="dropdown-menu details" aria-labelledby="rank" style="height: 350px;">
             <div id="indicators-content">
             <span class="close" onclick="close_panel(this)">x</span>
-            <h6 class="dropdown-header indicator-header-list">Rank</h6>
+            <h6 class="dropdown-header rank-header-list">Rank</h6>
              <hr class="hr-line"/> 
-            <p class="block-info-header indicator-info">Select locations using the search bar. Census blocks within your selected geography will then be ranked by the selected indicators. 
+            <p class="block-info-header rank-info">Select locations using the search bar. Census blocks within your selected geography will then be ranked by the selected indicators. 
             </p>
              <hr class="hr-line"/> 
             <!-- <h6 class="dropdown-header">Demographic</h6>  -->
@@ -295,35 +434,35 @@
                 
              <hr class="hr-line"/>             
           </div>
-          <button type="button" class="btn btn-primary float-left ml-4" onclick="indicator_content(this)">Submit</button>
+          <button type="button" class="btn btn-primary float-left ml-4" onclick="rank_content(this)">Submit</button>
         </div>
         </li> 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="dataupload" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-cloud-upload"></i>
           <span>Data Upload</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+        <div class="dropdown-menu" aria-labelledby="dataupload">
           <h6 class="dropdown-header">Data Upload:</h6>
          
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="report" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-file-pdf-o"></i>
           <span>Report/Export</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+        <div class="dropdown-menu" aria-labelledby="report">
           <h6 class="dropdown-header">Export:</h6>
         
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="about" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-question"></i>
           <span>About</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+        <div class="dropdown-menu" aria-labelledby="about">
           <h6 class="dropdown-header">About:</h6>
          
         </div>

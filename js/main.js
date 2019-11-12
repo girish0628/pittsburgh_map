@@ -3,7 +3,11 @@
  
 //   $('#close').toggleClass('active');
 // });
-function indicator_content(obj){
+function indicator_content(){
+  $('#indicator-demographic').toggleClass('d-none'); 
+  $('#demo-btn').toggleClass('d-none'); 
+}
+function rank_content(obj){
   $('#indicators-content').toggleClass('d-none');
  obj.innerHTML === 'Submit'? obj.innerHTML = 'Back': obj.innerHTML = 'Submit'
  
