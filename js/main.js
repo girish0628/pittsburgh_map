@@ -5,7 +5,7 @@
 // });
 function indicator_content(){
   $('#indicator-demographic').toggleClass('d-none'); 
-  $('#demo-btn').toggleClass('d-none'); 
+  $('.demo-content').toggleClass('d-none'); 
 }
 function rank_content(obj){
   $('#indicators-content').toggleClass('d-none');

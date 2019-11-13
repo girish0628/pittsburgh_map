@@ -368,8 +368,30 @@
           </div>              
            <hr class="hr-line"/> 
            </div>
-           <button type="button" id="demo-btn" class="btn btn-primary float-left ml-4 d-none" onclick="indicator_content()">Back</button>
-        </div>
+           <!-- <button type="button" id="demo-btn" class="btn btn-primary float-left ml-4 mb-3 d-none p-1" onclick="indicator_content()">Back</button> -->
+           <!-- <span class="close" onclick="close_panel(this)">x</span> -->
+           <div class="d-none demo-content">
+                <button type="button" id="demo-btn" class="close" onclick="indicator_content()">
+                    <i class="fa fa-angle-left"> Back</i>
+                  </button>
+                <h6 class="dropdown-header indicator-header-list">White</h6>
+                  <hr class="hr-line"/> 
+                <p class="indicator-questions">
+                    What does this variable measure? 
+                </p>
+                <p class="indicator-answers">
+                    All occupied housing units which are not owner-occupied, whether they are rented or occupied without payment of rent, are classified as renter-occupied.  
+                </p>
+                <hr class="hr-line"/> 
+                <p class="indicator-questions">
+                    What is the connection to the Census? 
+                </p>
+                <p class="indicator-answers">
+                    ............ 
+                </p>
+                  <hr class="hr-line"/> 
+            </div>
+          </div>
       </li> 
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="rank" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

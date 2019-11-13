@@ -335,3 +335,27 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   color: #111315;
 }
 .dropdown-menu::-webkit-scrollbar { width: 0 !important }
+#demo-btn {
+  position: absolute;
+  left: 4px; 
+}
+#demo-btn:focus{
+  outline: none;
+}
+.indicator-questions{
+  font-size: medium;
+  text-align: justify;
+  padding: 0 20px;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  color: rgb(79,98, 40);
+}
+.indicator-answers{
+  font-size: smaller;
+  text-align: justify;
+  padding: 0 20px;
+  font-weight: bolder;
+  margin-bottom: 15px;
+  color: rgb(23, 24, 22);
+  white-space: normal;
+}
