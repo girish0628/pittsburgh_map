@@ -6,11 +6,11 @@
     {"v_name":"pct_Rel_Under_6_CEN_2010", "a_label":"Children under 6", "v_label":"Under 6 yrs", "definition":"", "connection":"" },
     {"v_name":"pct_Males_CEN_2010", "a_label":"Males", "v_label":"Males", "definition":"", "connection":"" },
     {"v_name":"pct_Hispanic_CEN_2010", "a_label":"Hispanic", "v_label":"Hispanic", "definition":"", "connection":"" },
-    {"v_name":"Tot_Population_CEN_2010", "a_label":"Total population", "v_label":"Total Population", "definition":"", "connection":"" },
-    {"v_name":"pct_NH_Blk_alone_CEN_2010", "a_label":"Black alone", "v_label":"Black Alone", "definition":"", "connection":"" },
+    {"v_name":"Tot_Population_CEN_2010", "a_label":"Total population", "v_label":"Population", "definition":"", "connection":"" },
+    {"v_name":"pct_NH_Blk_alone_CEN_2010", "a_label":"Black alone", "v_label":"Black", "definition":"", "connection":"" },
     {"v_name":"pct_Sngl_Prns_HHD_CEN_2010", "a_label":"Single parent household", "v_label":"Single Parent", "definition":"Only one parent is present in the home. The parent may be never-married, widowed, divorced, or married, spouse absent.", "connection":"" },
     {"v_name":"Low_Response_Score", "a_label":"Low response score", "v_label":"LRS", "definition":"", "connection":"" },
-    {"v_name":"Mail_Return_Rate_CEN_2010", "a_label":"Mail return rate", "v_label":"Mail return", "definition":"", "connection":"" }
+    {"v_name":"Mail_Return_Rate_CEN_2010", "a_label":"Mail return rate", "v_label":"Mail Return", "definition":"", "connection":"" }
     ],
 "Housing":[
     {"v_name":"pct_Renter_Occp_HU_CEN_2010", "a_label":"Renter occupied units", "v_label":"Renter Occupied", "definition":"All occupied housing units which are not owner-occupied, whether they are rented or occupied without payment of rent, are classified as renter-occupied. ", "connection":""},

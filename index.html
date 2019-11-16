@@ -299,7 +299,7 @@
                               </td>
                               <td>
                                   <button type="button" class="btn btn-ico" data-toggle="tooltip" 
-                                        data-placement="right" title="Details" onclick="indicator_content('Single ParentMail Return', 'Demographic')">
+                                        data-placement="right" title="Details" onclick="indicator_content('Mail Return', 'Demographic')">
                                       <i class="fa fa-info"></i>
                                   </button>
                               </td>
@@ -517,7 +517,7 @@
            <!-- <button type="button" id="demo-btn" class="btn btn-primary float-left ml-4 mb-3 d-none p-1" onclick="indicator_content()">Back</button> -->
            <!-- <span class="close" onclick="close_panel(this)">x</span> -->
            <div class="d-none demo-content">
-                <button type="button" id="demo-btn" class="close" onclick="indicator_content()">
+                <button type="button" id="demo-btn" class="close" onclick="indicator_back()">
                     <i class="fa fa-angle-left"> Back</i>
                   </button>
                 <h6 class="dropdown-header indicator-header-list">White</h6>
@@ -556,7 +556,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm">
-                        <div class="control-group">
+                        <div class="control-group auto-search">
                             <!-- <label for="input-tags">Tags:</label> -->
                             <input type="text" id="input-tags" 
                             class="" 
@@ -567,7 +567,7 @@
                 <br/>
                 <div class="row">
                     <div class="col-sm">
-                        <div class="control-group">
+                        <div class="control-group auto-search">
                             <!-- <label for="input-tags">Tags:</label> -->
                             <input type="text" id="variables" 
                             class="" 
@@ -714,6 +714,7 @@
           muncipality = [...new Set(blkgrp_data.features.map(x => x.properties))]
       });
  
+      
     $('#input-tags').selectize({
             valueField: 'Muncipality',
             labelField: 'Muncipality',
@@ -734,8 +735,12 @@
         $('#variables').selectize({
             valueField: 'variable',
             labelField: 'variable',
-            maxItems: 3,
             searchField: 'variable',
+            persist: true,
+            createOnBlur: true,	          
+            openOnFocus: false,
+	          closeAfterSelect: true,
+            maxItems: 3,
             options: [],
             load: function(query, callback) {
               if (!query.length) return callback();

@@ -224,7 +224,10 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   line-height: 15px;
   text-align: left; 
 } */
-
+.auto-search{
+  text-align: left;
+  white-space: normal;
+}
 .details {
   background: #ffffffcf;
   text-align: center;
@@ -359,3 +362,11 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   color: rgb(23, 24, 22);
   white-space: normal;
 }
+/* .selectize-dropdown, .selectize-dropdown.form-control{
+  height: 90vh !important;
+}
+
+.selectize-dropdown-content{
+  max-height: 100% !important;
+  height: 100% !important;
+} */
