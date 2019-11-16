@@ -3,9 +3,30 @@
  
 //   $('#close').toggleClass('active');
 // });
-function indicator_content(){
-  $('#indicator-demographic').toggleClass('d-none'); 
-  $('.demo-content').toggleClass('d-none'); 
+
+function indicators_cards(){
+  $.getJSON("data/indicators_qa.json",indicators_qa=>{
+    // muncipality = [...new Set(blkgrp_data.features.map(x => x.properties))]
+});
+
+
+}
+function indicator_content(indicator_label, indicator_name){ 
+
+  $.getJSON("data/indicators_qa.json",indicators_qa=>{
+    indicator_arr = indicators_qa[indicator_name]
+    $('#indicator-demographic').toggleClass('d-none'); 
+    $('.demo-content').toggleClass('d-none');
+    $('#indicator-definition').html('');
+    $('#indicator-conection').html('')
+    $('#indicator-definition').html(indicator_arr.find((m)=>m["v_label"] === indicator_label).definition);
+    $('#indicator-conection').html(indicator_arr.find((m)=>m["v_label"] === indicator_label).connection)
+
+  });
+
+
+
+
 }
 function rank_content(obj){
   $('#indicators-content').toggleClass('d-none');

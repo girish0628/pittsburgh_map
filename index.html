@@ -155,7 +155,7 @@
                               </td>
                               <td>
                                   <button type="button" class="btn btn-ico" data-toggle="tooltip" 
-                                          data-placement="right" title="Details" onclick="indicator_content(this)">
+                                          data-placement="right" title="Details" onclick="indicator_content('White', 'Demographic')">
                                       <i class="fa fa-info"></i>
                                   </button>
                               </td>
@@ -171,7 +171,7 @@
                               </td>
                               <td>
                                   <button type="button" class="btn btn-ico" data-toggle="tooltip" 
-                                    data-placement="right" title="Details" onclick="indicator_content(this)">
+                                    data-placement="right" title="Details" onclick="indicator_content('Black', 'Demographic')">
                                       <i class="fa fa-info"></i>
                                   </button>
                               </td>
@@ -186,7 +186,8 @@
                                 <button type="button" class="btn btn-indicator">Hispanic</button>
                               </td>
                               <td>
-                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                          data-placement="right" title="Details" onclick="indicator_content('Hispanic', 'Demographic')">
                                       <i class="fa fa-info"></i>
                                   </button>
                               </td>
@@ -201,7 +202,8 @@
                                 <button type="button" class="btn btn-indicator">Adult 65+</button>
                               </td>
                               <td>
-                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                          data-placement="right" title="Details" onclick="indicator_content('Adult 65+', 'Demographic')">
                                       <i class="fa fa-info"></i>
                                   </button>
                               </td>
@@ -216,7 +218,8 @@
                                 <button type="button" class="btn btn-indicator">18-24 yrs</button>
                               </td>
                               <td>
-                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                          data-placement="right" title="Details"  onclick="indicator_content('18-24 yrs', 'Demographic')">
                                       <i class="fa fa-info"></i>
                                   </button>
                               </td>
@@ -231,7 +234,8 @@
                                 <button type="button" class="btn btn-indicator">Under 6 yrs</button>
                               </td>
                               <td>
-                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                        data-placement="right" title="Details" onclick="indicator_content('Under 6 yrs', 'Demographic')">
                                       <i class="fa fa-info"></i>
                                   </button>
                               </td>
@@ -246,7 +250,8 @@
                                 <button type="button" class="btn btn-indicator">Males</button>
                               </td>
                               <td>
-                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                          data-placement="right" title="Details" onclick="indicator_content('Males', 'Demographic')">
                                       <i class="fa fa-info"></i>
                                   </button>
                               </td>
@@ -261,7 +266,8 @@
                                 <button type="button" class="btn btn-indicator">Single Parent</button>
                               </td>
                               <td>
-                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                          data-placement="right" title="Details"  onclick="indicator_content('Single Parent', 'Demographic')">
                                       <i class="fa fa-info"></i>
                                   </button>
                               </td>
@@ -276,7 +282,8 @@
                                 <button type="button" class="btn btn-indicator">LRS</button>
                               </td>
                               <td>
-                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                        data-placement="right" title="Details"   onclick="indicator_content('LRS', 'Demographic')">
                                       <i class="fa fa-info"></i>
                                   </button>
                               </td>
@@ -291,7 +298,8 @@
                                 <button type="button" class="btn btn-indicator">Mail Return</button>
                               </td>
                               <td>
-                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                        data-placement="right" title="Details" onclick="indicator_content('Single ParentMail Return', 'Demographic')">
                                       <i class="fa fa-info"></i>
                                   </button>
                               </td>
@@ -306,7 +314,8 @@
                                 <button type="button" class="btn btn-indicator">Population</button>
                               </td>
                               <td>
-                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="Details">
+                                  <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                          data-placement="right" title="Details" onclick="indicator_content('Population', 'Demographic')">
                                       <i class="fa fa-info"></i>
                                   </button>
                               </td>
@@ -331,7 +340,58 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, 
+                    <table class="table borderless">                
+                    <tbody>
+                      <tr>                    
+                        <td>
+                          <button type="button" class="btn btn-indicator">Below Poverty</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                    data-placement="right" title="Details" onclick="indicator_content('Below Poverty', 'Economic')">
+                                <i class="fa fa-info"></i>
+                            </button>
+                        </td>
+                        <td>
+                          <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                              <i class="fa fa-map"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>                    
+                        <td>
+                          <button type="button" class="btn btn-indicator">No high school</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                              data-placement="right" title="Details" onclick="indicator_content('No high school', 'Economic')">
+                                <i class="fa fa-info"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                <i class="fa fa-map"></i>
+                            </button>
+                        </td>
+                      </tr>
+                      <tr>                    
+                        <td>
+                          <button type="button" class="btn btn-indicator">Median income</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                    data-placement="right" title="Details" onclick="indicator_content('Median income', 'Economic')">
+                                <i class="fa fa-info"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                <i class="fa fa-map"></i>
+                            </button>
+                        </td>
+                      </tr>                                        
+                    </tbody>
+                  </table>
                   </div>
                 </div>
               </div> 
@@ -346,7 +406,74 @@
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, 
+                    <table class="table borderless">                
+                      <tbody>
+                        <tr>                    
+                          <td>
+                            <button type="button" class="btn btn-indicator">Renter Occupied</button>
+                          </td>
+                          <td>
+                              <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                      data-placement="right" title="Details" onclick="indicator_content('Renter Occupied', 'Housing')">
+                                  <i class="fa fa-info"></i>
+                              </button>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                <i class="fa fa-map"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>                    
+                          <td>
+                            <button type="button" class="btn btn-indicator">Vacant Units</button>
+                          </td>
+                          <td>
+                              <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                data-placement="right" title="Details" onclick="indicator_content('Vacant Units', 'Housing')">
+                                  <i class="fa fa-info"></i>
+                              </button>
+                          </td>
+                          <td>
+                              <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                  <i class="fa fa-map"></i>
+                              </button>
+                          </td>
+                        </tr>
+                        <tr>                    
+                          <td>
+                            <button type="button" class="btn btn-indicator">Move after 2010</button>
+                          </td>
+                          <td>
+                              <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                      data-placement="right" title="Details" onclick="indicator_content('Move after 2010', 'Housing')">
+                                  <i class="fa fa-info"></i>
+                              </button>
+                          </td>
+                          <td>
+                              <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                  <i class="fa fa-map"></i>
+                              </button>
+                          </td>
+                        </tr>                                        
+                        <tr>                    
+                          <td>
+                            <button type="button" class="btn btn-indicator">Housing Value</button>
+                          </td>
+                          <td>
+                              <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                      data-placement="right" title="Details" onclick="indicator_content('Housing Value', 'Housing')">
+                                  <i class="fa fa-info"></i>
+                              </button>
+                          </td>
+                          <td>
+                              <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                  <i class="fa fa-map"></i>
+                              </button>
+                          </td>
+                        </tr>                                        
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -361,7 +488,26 @@
                 </div>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, 
+                    <table class="table borderless">                
+                      <tbody>
+                        <tr>                    
+                          <td>
+                            <button type="button" class="btn btn-indicator">Graduate</button>
+                          </td>
+                          <td>
+                              <button type="button" class="btn btn-ico" data-toggle="tooltip" 
+                                      data-placement="right" title="Details" onclick="indicator_content('Graduate', 'Education')">
+                                  <i class="fa fa-info"></i>
+                              </button>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-ico" data-toggle="tooltip" data-placement="right" title="View On Map">
+                                <i class="fa fa-map"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        </tbody>
+                        </table> 
                   </div>
                 </div>
               </div>
@@ -379,14 +525,14 @@
                 <p class="indicator-questions">
                     What does this variable measure? 
                 </p>
-                <p class="indicator-answers">
+                <p class="indicator-answers" id="indicator-definition">
                     All occupied housing units which are not owner-occupied, whether they are rented or occupied without payment of rent, are classified as renter-occupied.  
                 </p>
                 <hr class="hr-line"/> 
                 <p class="indicator-questions">
                     What is the connection to the Census? 
                 </p>
-                <p class="indicator-answers">
+                <p class="indicator-answers" id="indicator-conection">
                     ............ 
                 </p>
                   <hr class="hr-line"/> 
@@ -416,20 +562,6 @@
                             class="" 
                             value=""/>
                         </div>
-
-                        <!-- <div class="input-group">
-                            <input class="form-control py-2 rounded-pill mr-1 pr-5" type="text" value="" 
-                              id="input-tagsq" class="input-tags demo-default" value="awesome,neat"
-                              placeholder="Enter locations…">
-                            <span class="input-group-append">
-                                <button class="btn rounded-pill border-0 ml-n5" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                        </div> -->
-
-                        
-
                     </div>
                 </div>
                 <br/>
@@ -440,15 +572,7 @@
                             <input type="text" id="variables" 
                             class="" 
                             value="">
-                          </div>
-
-                        <!-- <div class="input-group">
-                            <input class="form-control rounded-pill py-2 pr-5 mr-1 bg-transparent" type="search" 
-                              id="variables" value="" placeholder="Select variables">
-                            <span class="input-group-append">
-                                <div class="input-group-text border-0 bg-transparent ml-n5"></div>
-                            </span>
-                        </div> -->
+                          </div>                      
                     </div>
                 </div>
                 <br/>             
