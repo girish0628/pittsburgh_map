@@ -27,7 +27,7 @@ function indicator_content(indicator_label, indicator_name){
     $('#indicator-definition').html('');
     $('#indicator-conection').html('')
     $('#indicator-definition').html(indicator_arr[indicator_name].find((m)=>m["v_label"] === indicator_label).definition);
-    $('#indicator-conection').html(indicator_arr[indicator_name].find((m)=>m["v_label"] === indicator_label).connection)
+    // $('#indicator-conection').html(indicator_arr[indicator_name].find((m)=>m["v_label"] === indicator_label).connection);
 
   // });
 
