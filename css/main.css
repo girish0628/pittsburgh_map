@@ -160,12 +160,12 @@ dl.multiple-table dt {
   width: 85%;
   margin: 0 0 10px 20px;
 }
-dl.multiple-table dd {
-  /* padding: 5px;
+/* dl.multiple-table dd {
+   padding: 5px;
   border-bottom: 2px solid #EACEAC;
   width: 85%;
-  margin: 0 0 0 20px; */
-}
+  margin: 0 0 0 20px; 
+} */
 
 dl.multiple-table dd.first { border-top: 1px solid #999; }
 
