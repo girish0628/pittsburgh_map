@@ -37,7 +37,7 @@ function indicator_content(indicator_label, indicator_name){
 }
 function rank_content(obj){
   $('#indicators-content').toggleClass('d-none');
- obj.innerHTML === 'Submit'? obj.innerHTML = 'Back': obj.innerHTML = 'Submit'
+ obj.innerHTML === 'Submit'? obj.innerHTML = '<i class="fa fa-angle-left"> Back</i>': obj.innerHTML = 'Submit'
  
 }
 

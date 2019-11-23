@@ -517,7 +517,7 @@
            <!-- <button type="button" id="demo-btn" class="btn btn-primary float-left ml-4 mb-3 d-none p-1" onclick="indicator_content()">Back</button> -->
            <!-- <span class="close" onclick="close_panel(this)">x</span> -->
            <div class="d-none demo-content">
-                <button type="button" id="demo-btn" class="close" onclick="indicator_back()">
+                <button type="button" id="demo-btn" class="btn btn-indicator-list" onclick="indicator_back()">
                     <i class="fa fa-angle-left"> Back</i>
                   </button>
                 <h6 class="dropdown-header indicator-header-list">White</h6>
@@ -559,8 +559,10 @@
                         <div class="control-group auto-search">
                             <!-- <label for="input-tags">Tags:</label> -->
                             <input type="text" id="input-tags" 
+                            placeholder="Ex: Wilkinsburg, Braddock"
                             class="" 
                             value=""/>
+                            <small class="form-text help-txt text-muted">Select maximum of 3 boroughs.</small>
                         </div>
                     </div>
                 </div>
@@ -570,8 +572,10 @@
                         <div class="control-group auto-search">
                             <!-- <label for="input-tags">Tags:</label> -->
                             <input type="text" id="variables" 
+                            placeholder="Ex: Wilkinsburg, Braddock"
                             class="" 
                             value="">
+                            <small class="form-text help-txt text-muted">Select maximum of 3 indicators.</small>
                           </div>                      
                     </div>
                 </div>
@@ -580,7 +584,7 @@
                 
              <hr class="hr-line"/>             
           </div>
-          <button type="button" class="btn btn-primary float-left ml-4" onclick="rank_content(this)">Submit</button>
+          <button type="button" class="btn btn-indicator-list rank-btn" onclick="rank_content(this)">Submit</button>
         </div>
         </li> 
       <li class="nav-item dropdown">

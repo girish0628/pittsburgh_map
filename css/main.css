@@ -140,7 +140,7 @@ html, body, #map {
   text-align: justify;
   padding: 0 30px; 
 }
-.rank-info{
+.rank-info, .indicator-info{
   margin-bottom: -0.5rem;
 }
 /* dl.multiple-table { border-bottom: 1px solid #999; } */
@@ -333,14 +333,15 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
 .card-header {
   padding: 0px;
 }
-.rank-header-list{
+.rank-header-list, .indicator-header-list{
   font-size: 1.5rem;
   color: #111315;
 }
 .dropdown-menu::-webkit-scrollbar { width: 0 !important }
-#demo-btn {
+#demo-btn, .rank-btn {
   position: absolute;
-  left: 4px; 
+  left: 4px;
+  padding: 1px 6px;
 }
 #demo-btn:focus{
   outline: none;
@@ -352,6 +353,9 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   font-weight: bolder;
   margin-bottom: 5px;
   color: rgb(79,98, 40);
+}
+.help-txt{
+  margin-top: -0.25rem;
 }
 .indicator-answers{
   font-size: smaller;
