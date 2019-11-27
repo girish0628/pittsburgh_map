@@ -7,10 +7,39 @@ var indicator_arr;
 $.getJSON("data/indicators_qa.json",indicators_qa=>{
   indicator_arr = indicators_qa;
 });
+
+let mountains = [
+  { name: "Monte Falco", height: 1658, place: "Parco Foreste Casentinesi" },
+  { name: "Monte Falterona", height: 1654, place: "Parco Foreste Casentinesi" },
+  { name: "Poggio Scali", height: 1520, place: "Parco Foreste Casentinesi" },
+  { name: "Pratomagno", height: 1592, place: "Parco Foreste Casentinesi" },
+  { name: "Monte Amiata", height: 1738, place: "Siena" }
+];
+function generateTableHead(table, data) {
+  let thead = table.createTHead();
+  let row = thead.insertRow();
+  for (let key of data) {
+    let th = document.createElement("th");
+    let text = document.createTextNode(key);
+    th.appendChild(text);
+    row.appendChild(th);
+  }
+}
+function generateTable(table, data) {
+  for (let element of data) {
+    let row = table.insertRow();
+    for (key in element) {
+      let cell = row.insertCell();
+      let text = document.createTextNode(element[key]);
+      cell.appendChild(text);
+    }
+  }
+}
 function indicators_cards(){
   $.getJSON("data/indicators_qa.json",indicators_qa=>{
     // muncipality = [...new Set(blkgrp_data.features.map(x => x.properties))]
 });
+
 
 
 }
@@ -31,14 +60,18 @@ function indicator_content(indicator_label, indicator_name){
 
   // });
 
-
-
-
 }
 function rank_content(obj){
   $('#indicators-content').toggleClass('d-none');
+  $('#table').toggleClass('d-none');
+  
  obj.innerHTML === 'Submit'? obj.innerHTML = '<i class="fa fa-angle-left"> Back</i>': obj.innerHTML = 'Submit'
- 
+
+  // let table = document.querySelector("table");
+  let data = Object.keys(mountains[0]);
+    generateTableHead( $('#table')[0], data);
+    generateTable($('#table')[0], mountains);
+
 }
 
 $('.dropdown-menu').click(function(e) {
