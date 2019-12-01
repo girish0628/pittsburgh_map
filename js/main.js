@@ -3,6 +3,35 @@
  
 //   $('#close').toggleClass('active');
 // });
+
+function indicator_compare(muncipality_name, indicator_attrib){
+
+  // var muncipality_name = ["Ross township", "West Deer township", "Wilkinsburg borough"];
+  var arr_obj = [], final_arr = [];
+  
+     for(var i=0; i < muncipality_name.length; i++){      
+      
+      var indicator_data = muncipality.filter(({Muncipality}) => Muncipality === muncipality_name[i])
+                            // .filter(obj =>obj[indicator_attrib] !== null)
+                            .sort((a, b) => (a[indicator_attrib] > b[indicator_attrib]) ? 1 : -1)
+                            .slice(0,3);
+     
+      arr_obj.push(indicator_data);	 
+     }
+   
+    for(var i=0; i < arr_obj.length; i++){
+      //debugger;
+      var obj = {};
+      for(var j=0; j < arr_obj[i].length; j++){
+        
+        obj[muncipality_name[j]] = arr_obj[i][j][indicator_attrib];
+      }
+          final_arr.push(obj)
+      
+    }
+    return [...final_arr];
+}
+
 var indicator_arr;
 $.getJSON("data/indicators_qa.json",indicators_qa=>{
   indicator_arr = indicators_qa;
@@ -30,9 +59,18 @@ function generateTable(table, data) {
     let row = table.insertRow();
     for (key in element) {
       let cell = row.insertCell();
-      let text = document.createTextNode(element[key]);
-      cell.appendChild(text);
+
+      var btn = document.createElement('input');
+          btn.type = "button";
+          btn.className = "btn btn-indicator";
+          btn.value = element[key] ? element[key]: 'No Data';
+
+      // let text = document.createTextNode(element[key]);
+      // cell.appendChild(text);
+      cell.appendChild(btn);
     }
+  
+
   }
 }
 function indicators_cards(){
@@ -63,16 +101,36 @@ function indicator_content(indicator_label, indicator_name){
 }
 function rank_content(obj){
   $('#indicators-content').toggleClass('d-none');
-  $('#table').toggleClass('d-none');
+  $('#indicator-res').toggleClass('d-none');
   
- obj.innerHTML === 'Submit'? obj.innerHTML = '<i class="fa fa-angle-left"> Back</i>': obj.innerHTML = 'Submit'
+//  obj.innerHTML === 'Submit'? obj.innerHTML = '<i class="fa fa-angle-left"> Back</i>': obj.innerHTML = 'Submit'
 
   // let table = document.querySelector("table");
-  let data = Object.keys(mountains[0]);
-    generateTableHead( $('#table')[0], data);
-    generateTable($('#table')[0], mountains);
+
+
+  // let data = Object.keys(mountains[0]);
+  //   generateTableHead( $('#table')[0], data);
+  //   generateTable($('#table')[0], mountains);
+
+  var boroughs_arr = $('#input-tags').get(0).selectize.getValue();
+  var indicators_arr = $('#variables').get(0).selectize.getValue().split(',');
+
+  for(var i=0; i < indicators_arr.length; i++){
+    var data_obj = indicator_compare(boroughs_arr.split(','), indicators_arr[i]);
+
+    var data = Object.keys(data_obj[0]);
+    generateTableHead( $('#table')[0], boroughs_arr.replace(/ borough/g, '').split(','));
+    generateTable($('#table')[0], data_obj);
+  }
 
 }
+
+function rank_back(){
+  $('#indicators-content').toggleClass('d-none');
+  $('#indicator-res').toggleClass('d-none');
+  $('#table').empty();
+}
+
 
 $('.dropdown-menu').click(function(e) {
   e.stopPropagation();
