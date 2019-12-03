@@ -12,6 +12,7 @@
   <title>Pittsburgh Muncipality MAP || MAP Page</title>
   <!-- Custom fonts for this template-->
   <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Custom styles for this template-->
  
@@ -614,17 +615,85 @@
               </div>
         </div>
         </li> 
-      <!-- <li class="nav-item dropdown">
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dataupload" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-cloud-upload"></i>
           <span>Data Upload</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="dataupload">
-          <h6 class="dropdown-header">Data Upload:</h6>
-         
-        </div>
-      </li>
-      <li class="nav-item dropdown">
+        <div class="dropdown-menu repo-content" aria-labelledby="dataupload">          
+          <div id="data-upload-content">
+            <span class="close" onclick="close_panel(this)">x</span>
+            <h6 class="dropdown-header rank-header-list">Data Repository</h6>
+             <hr class="hr-line"/>              
+              
+              <div class="container" id="data-repo">
+                  <button type="button" class="btn btn-upload" style="margin: 10px 0;"  onclick="dataUploadPanel()">
+                      Upload your data <i class="fa fa-angle-right" style="float: right;font-size: 25px;"></i>
+                    </button>
+
+              <div class="tab">
+                  <button class="tablinks" onclick="openCity(event, 'pgh-data')">PGH Data</button>
+                  <button class="tablinks" onclick="openCity(event, 'user-data')">User Data</button>
+                  
+                </div>
+                
+                <div id="pgh-data" class="tabcontent">
+                  
+                  <p>PGH Data .</p>
+                </div>
+                
+                <div id="user-data" class="tabcontent">
+                  
+                  <p>User data.</p> 
+                </div>               
+               
+              </div>
+                   
+                
+             <!-- <hr class="hr-line"/> -->
+             <!-- <button type="button" class="btn btn-indicator-list rank-btn" onclick="rank_content(this)">Submit</button>     -->
+          </div>         
+          
+              <div class="container d-none" id="data-upload-panel">
+
+                  <h4 style="color:#2ea5aa">Choose a file</h4>
+                  <button type="button" class="btn btn-upload" style="margin: 10px 0;">
+                      Browse..
+                    </button>
+                    <p>
+                        Browse for *.csv or archived (*.zip) shapefiles.
+                    </p>
+                    <p>
+                        The first row of CSV files must contain column names. One column must include region codes, 
+                        and at least one column must include data values to be mapped. 
+                        See the CSV templates below for the required key identifiers assigned to each geography type:
+                    </p>
+                    <ul class="list-upload-data">
+                        <li><a href="#">Assembly Districts</a></li>
+                        <li><a href="#">Census</a></li>
+                        <li><a href="#">Federal Congressional Districts</a></li>
+                        <li><a href="#">Core-Based Statistical Areas</a></li>
+                        <li><a href="#">Counties</a></li>
+                        <li><a href="#">MPO Jurisdictions</a></li>
+                        <li><a href="#">OSHPD MSSAs</a></li>
+                        <li><a href="#">Elementary School Districts</a></li>
+                        <li><a href="#">Senate Districts</a></li>
+                      </ul>
+                    <p>
+                        Shapefiles must be in an archive (*.zip) containing .shp and .dbf files. Additional requirements are:
+                    </p>
+                    <p>
+                        <ul class="list-upload-data">
+                            <li>Shapefiles must use the WGS84 coordinate system</li>
+                            <li>Geography of the layer must overlap California</li>
+                            <li>Feature names should be in a field called name</li>                      
+                          </ul>
+                    </p>                      
+                <button type="button" class="btn btn-indicator-list rank-btn-back" onclick="dataUploadPanel()">Back</button>
+            </div>
+            <hr class="hr-line"/>   
+        </li>
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="report" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-file-pdf-o"></i>
           <span>Report/Export</span>
@@ -699,6 +768,7 @@
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>

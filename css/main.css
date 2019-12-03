@@ -316,6 +316,21 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   border-color: rgb(245, 156, 47);
   width: 40px;
 }
+.btn-upload{
+  color: #fff;
+  background-color: #E1B355;
+  border-color: #E1B355;
+  width: 100%;
+}
+.btn-upload:hover{
+  color: #fff;
+  background-color:  rgb(245, 156, 47);
+  border-color: rgb(245, 156, 47);
+  width: 100%;
+}
+.btn-upload:focus{
+  outline: none;
+}
 .btn-indicator-list{
   /* width: 100px; */
   color: #fff;
@@ -388,3 +403,101 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
 /* .table th, .table td {
   border-top: none;
 } */
+
+/* .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn-upload {
+  border: 2px solid gray;
+  color: #f5f2f2;
+  background-color: #A6A6A6;
+  padding: 5px 30%;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+} */
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: 0.3s;
+  font-size: 17px;
+  width: 50%;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+#data-upload-panel{
+  -webkit-transition: opacity 600ms, visibility 600ms;
+  transition: opacity 1800ms, visibility 600ms;
+}
+#data-repo{
+  -webkit-transition: opacity 600ms, visibility 600ms;
+  transition: opacity 600ms, visibility 600ms;
+}
+#data-upload-panel > p{
+  white-space: normal;
+  text-align: justify;
+  /* font-size: 12px; */
+  font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+.list-upload-data{
+  text-align: justify;
+  list-style-type: initial;
+  white-space: normal;
+  text-align: justify;
+}
+.repo-content {
+  background: #ffffffcf;
+  text-align: center;
+  width: 450px;
+  font-size: 15px;
+  -webkit-box-shadow: 10px 10px 5px -8px rgba(138,135,138,1);
+  -moz-box-shadow: 10px 10px 5px -8px rgba(138,135,138,1);
+  white-space: nowrap;
+  min-width: 250px;
+  transition: all 0.3s;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+  overflow-y: scroll;
+  max-height: 700px;
+  margin-top: -180px !important;
+}
