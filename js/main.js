@@ -3,6 +3,24 @@
  
 //   $('#close').toggleClass('active');
 // });
+function handleFileSelect(evt) {
+  // var files = evt.target.files; // FileList object
+
+  // files is a FileList of File objects. List some properties.
+  var file = evt.target.files[0];
+  if (file) {
+      // create reader
+      var reader = new FileReader();
+      reader.readAsText(file);
+      reader.onload = function(e) {
+          // browser completed reading file - display it
+          alert(e.target.result);
+      };
+  }
+
+}
+
+document.getElementById('files').addEventListener('change', handleFileSelect, false);
 
 function dataUploadPanel(){
   $('#data-upload-panel').toggleClass('d-none'); 

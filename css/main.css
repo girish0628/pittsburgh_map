@@ -501,3 +501,16 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   max-height: 700px;
   margin-top: -180px !important;
 }
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}

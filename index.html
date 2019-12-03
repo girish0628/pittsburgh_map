@@ -627,10 +627,11 @@
              <hr class="hr-line"/>              
               
               <div class="container" id="data-repo">
-                  <button type="button" class="btn btn-upload" style="margin: 10px 0;"  onclick="dataUploadPanel()">
-                      Upload your data <i class="fa fa-angle-right" style="float: right;font-size: 25px;"></i>
-                    </button>
-
+                   
+                      <button type="button" class="btn btn-upload" style="margin: 10px 0;"  onclick="dataUploadPanel()">
+                          Upload your data <i class="fa fa-angle-right" style="float: right;font-size: 25px;"></i>
+                      </button>
+                      
               <div class="tab">
                   <button class="tablinks" onclick="openCity(event, 'pgh-data')">PGH Data</button>
                   <button class="tablinks" onclick="openCity(event, 'user-data')">User Data</button>
@@ -657,9 +658,13 @@
               <div class="container d-none" id="data-upload-panel">
 
                   <h4 style="color:#2ea5aa">Choose a file</h4>
-                  <button type="button" class="btn btn-upload" style="margin: 10px 0;">
-                      Browse..
-                    </button>
+                    <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload" style="margin: 10px 0;">
+                            <i class="fa fa-file-excel-o"></i> Browse File
+                          </button>
+                      <input type="file" name="indicator_file" id="files" accept=".xls,.csv,.txt" />
+                    </div>
+                  
                     <p>
                         Browse for *.csv or archived (*.zip) shapefiles.
                     </p>
