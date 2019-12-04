@@ -2,7 +2,7 @@
  "Demographic":[
     {"v_name":"pct_Pop_18_24_CEN_2010", "a_label":"Population 18-24 yrs old", "v_label":"18-24 yrs", "definition":"Population who are between the age of 18 to 24 years old.", "connection":"" },
     {"v_name":"pct_NH_White_alone_CEN_2010", "a_label":"white", "v_label":"White", "definition":"A person having origins in any of the original peoples of Europe, the Middle East, or North Africa.", "connection":"" },
-    {"v_name":"pct_Pop_65plus_CEN_2010", "a_label":"Adult 65+", "v_label":"Adult 65+", "definition":"Population who are above the age of 65 years old.", "connection":"" },
+    {"v_name":"Pop_65plus_CEN_2010", "a_label":"Adult 65+", "v_label":"Adult 65+", "definition":"Population who are above the age of 65 years old.", "connection":"" },
     {"v_name":"pct_Rel_Under_6_CEN_2010", "a_label":"Children under 6", "v_label":"Under 6 yrs", "definition":"Population who are below the age of 6 years old.  ", "connection":"" },
     {"v_name":"pct_Males_CEN_2010", "a_label":"Males", "v_label":"Males", "definition":"", "connection":"" },
     {"v_name":"pct_Hispanic_CEN_2010", "a_label":"Hispanic", "v_label":"Hispanic", "definition":"People who identify with the terms “Hispanic” or “Latino” are those who classify themselves in one of the specific Hispanic or Latino categories – “Mexican, Mexican Am., Chicano” or ”Puerto Rican” or “Cuban” – as well as those who indicate that they are “another Hispanic, Latino, or Spanish origin.”", "connection":"" },

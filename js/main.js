@@ -3,6 +3,9 @@
  
 //   $('#close').toggleClass('active');
 // });
+var blkgrp_lowmod2015_muncipal;
+var blkgrp_lowmod2015_muncipal_data;
+
 function handleFileSelect(evt) {
   // var files = evt.target.files; // FileList object
 
@@ -228,11 +231,11 @@ createContainer(20, 100, "#white");
 createContainer(20, 100, "#white-new");
 
 
-function style(feature) {
+function style(feature, indicator="LowModPercentage") {
 	return {
 		fillColor: d3.scaleQuantize()
               .domain(domain_arr)
-              .range(color_array)(feature.properties.LowModPercentage),
+              .range(color_array)(feature.properties[indicator]),
 		weight: 2,
 		opacity: 1,
 		color: 'white',
@@ -241,6 +244,20 @@ function style(feature) {
 	};
 }
 
+function reSetStyle(indicator){
+  var data_muncipality = blkgrp_lowmod2015_muncipal.toGeoJSON();
+  domain_arr = [
+    d3.min(data_muncipality.features, function(d) { return parseFloat(d.properties[indicator]); }),
+    d3.max(data_muncipality.features, function(d) { return parseFloat(d.properties[indicator]); })
+  ];
+
+  blkgrp_lowmod2015_muncipal.eachLayer(function (layer) {  
+    var feature = layer.feature;
+    // if(layer.feature.properties.NAME == 'feature 1') {    
+      layer.setStyle(style(feature, indicator)) 
+    // }
+  });
+}
 
  // load GeoJSON from an external file
  $.getJSON("data/blkgrp_lowmod2015_muncipal.geojson",blkgrp_data=>{
@@ -251,7 +268,7 @@ function style(feature) {
 
 
 
-  var blkgrp_lowmod2015_muncipal = L.geoJson(blkgrp_data, {style: style,
+    blkgrp_lowmod2015_muncipal = L.geoJson(blkgrp_data, {style: style,
     onEachFeature: function (feature, layer) {
 		
 			layer.on('click', function () {
