@@ -6,6 +6,60 @@
 var blkgrp_lowmod2015_muncipal;
 var blkgrp_lowmod2015_muncipal_data;
 
+//var csv is the CSV file with headers
+function csv_to_JSON(csv){
+  var lines=csv.split("\n");
+  var result = [];
+  var headers=lines[0].split(",");
+  for(var i=1;i<lines.length;i++){
+
+      var obj = {};
+      var currentline=lines[i].split(",");
+
+      for(var j=0;j<headers.length;j++){
+          obj[headers[j]] = currentline[j];
+      }
+
+      result.push(obj);
+
+  }
+  // console.log(result);
+  return result; //JavaScript object
+  // return JSON.stringify(result); //JSON
+}
+
+function csv_on_map(upload_json){  
+    var json_obj = csv_to_JSON(upload_json);
+    var indicator = Object.keys(json_obj[0])[1]
+    var data_muncipality = blkgrp_lowmod2015_muncipal.toGeoJSON();
+
+    domain_arr = [
+      d3.min(json_obj, function(d) { return parseFloat(d[indicator]); }),
+      d3.max(json_obj, function(d) { return parseFloat(d[indicator]); })
+    ];
+    var index = 0;
+    blkgrp_lowmod2015_muncipal.eachLayer(function (layer) {  
+    
+      // var feature = layer.feature;
+      // if(layer.feature.properties.NAME == 'feature 1') {    
+        layer.setStyle(style_indicator(json_obj[index++], indicator)) 
+      // }
+    });
+    function style_indicator(feature, indicator){
+    return {
+      fillColor: d3.scaleQuantize()
+                .domain(domain_arr)
+                .range(color_array)(feature[indicator]),
+      weight: 2,
+      opacity: 1,
+      color: 'white',
+      dashArray: '3',
+      fillOpacity: 0.7
+    };
+  }
+  
+}
+
 function handleFileSelect(evt) {
   // var files = evt.target.files; // FileList object
 
@@ -17,7 +71,7 @@ function handleFileSelect(evt) {
       reader.readAsText(file);
       reader.onload = function(e) {
           // browser completed reading file - display it
-          alert(e.target.result);
+          csv_on_map(e.target.result);
       };
   }
 
@@ -252,6 +306,7 @@ function reSetStyle(indicator){
   ];
 
   blkgrp_lowmod2015_muncipal.eachLayer(function (layer) {  
+    debugger;
     var feature = layer.feature;
     // if(layer.feature.properties.NAME == 'feature 1') {    
       layer.setStyle(style(feature, indicator)) 
