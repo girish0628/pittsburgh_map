@@ -47,7 +47,7 @@ function csv_on_map(upload_json){
     });
     function style_indicator(feature, indicator){
     return {
-      fillColor: d3.scaleQuantize()
+      fillColor: feature[indicator].trim() == ""? '#eeeeee':  d3.scaleQuantize()
                 .domain(domain_arr)
                 .range(color_array)(feature[indicator]),
       weight: 2,
