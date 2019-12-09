@@ -3,8 +3,13 @@
  
 //   $('#close').toggleClass('active');
 // });
+
+
+
 var blkgrp_lowmod2015_muncipal;
 var blkgrp_lowmod2015_muncipal_data;
+
+
 
 //var csv is the CSV file with headers
 function csv_to_JSON(csv){
@@ -61,6 +66,9 @@ function csv_on_map(upload_json){
 }
 
 function handleFileSelect(evt) {
+  $('#cover').css("display", "inline-block")
+  $('p.blocktext').css("width", "28em")
+  $('#cover > .blocktext').html("Pleaѕe waιт... ѕoon, yoυr ιndιcaтor daтa wιll reғlecт On тнe мap.");
   // var files = evt.target.files; // FileList object
 
   // files is a FileList of File objects. List some properties.
@@ -72,6 +80,8 @@ function handleFileSelect(evt) {
       reader.onload = function(e) {
           // browser completed reading file - display it
           csv_on_map(e.target.result);
+         
+          $('#cover').fadeOut(1000);
       };
   }
 

@@ -23,7 +23,12 @@
 </head>
 
 <body id="page-top">
-
+  <div id="cover">
+    <p class="blocktext">
+      <!-- Pleaѕe waιт... ѕoon, yoυr ιndιcaтor daтa wιll reғlecт On тнe мap. -->
+      ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...
+    </p>
+  </div> 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
     <a class="navbar-brand mr-1" href="index.html">
@@ -876,7 +881,10 @@
             }               
         });
 
-
+        $(window).load(function(){
+  
+          $('#cover').fadeOut(1000);
+        });
       </script>
 </body>
 
