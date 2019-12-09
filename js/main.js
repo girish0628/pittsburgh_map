@@ -391,5 +391,10 @@ var overlays = {
 	};
 
   L.control.layers(baseLayers, overlays).addTo(map);
- 
+//   var callBack = function () {
+//     console.log("Map successfully loaded");
+//     // do some stuff
+// };
+
+map.whenReady(()=>$('#cover').fadeOut(1000));
 });
