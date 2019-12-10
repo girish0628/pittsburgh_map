@@ -226,7 +226,7 @@ function uniqueId(){
 }
 
 function close_panel(obj){
-  obj.parentElement.classList.remove("show");
+  obj.parentElement.classList[2] === "show" ? obj.parentElement.classList.remove("show"): obj.parentElement.parentElement.classList.remove("show");
   
 }
 function collapseCard(obj){
