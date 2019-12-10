@@ -36,7 +36,7 @@ function csv_to_JSON(csv){
 function csv_on_map(upload_json){  
     var json_obj = csv_to_JSON(upload_json);
     var indicator = Object.keys(json_obj[0])[1]
-    var data_muncipality = blkgrp_lowmod2015_muncipal.toGeoJSON();
+    // var data_muncipality = blkgrp_lowmod2015_muncipal.toGeoJSON();
 
     domain_arr = [
       d3.min(json_obj, function(d) { return parseFloat(d[indicator]); }),
@@ -143,13 +143,6 @@ $.getJSON("data/indicators_qa.json",indicators_qa=>{
   indicator_arr = indicators_qa;
 });
 
-let mountains = [
-  { name: "Monte Falco", height: 1658, place: "Parco Foreste Casentinesi" },
-  { name: "Monte Falterona", height: 1654, place: "Parco Foreste Casentinesi" },
-  { name: "Poggio Scali", height: 1520, place: "Parco Foreste Casentinesi" },
-  { name: "Pratomagno", height: 1592, place: "Parco Foreste Casentinesi" },
-  { name: "Monte Amiata", height: 1738, place: "Siena" }
-];
 function generateTableHead(table, data) {
   let thead = table.createTHead();
   let row = thead.insertRow();
@@ -192,32 +185,16 @@ function indicator_back(){
   $('.demo-content').toggleClass('d-none');
 }
 function indicator_content(indicator_label, indicator_name){ 
-
-  // // $.getJSON("data/indicators_qa.json",indicators_qa=>{
-    // indicator_arr = indicators_qa[indicator_name]
     $('#indicator-demographic').toggleClass('d-none'); 
     $('.demo-content').toggleClass('d-none');
     $('#indicator-definition').html('');
     $('#indicator-conection').html('')
     $('#indicator-definition').html(indicator_arr[indicator_name].find((m)=>m["v_label"] === indicator_label).definition);
-    // $('#indicator-conection').html(indicator_arr[indicator_name].find((m)=>m["v_label"] === indicator_label).connection);
-
-  // });
-
+ 
 }
 function rank_content(obj){
   $('#indicators-content').toggleClass('d-none');
   $('#indicator-res').toggleClass('d-none');
-  
-//  obj.innerHTML === 'Submit'? obj.innerHTML = '<i class="fa fa-angle-left"> Back</i>': obj.innerHTML = 'Submit'
-
-  // let table = document.querySelector("table");
-
-
-  // let data = Object.keys(mountains[0]);
-  //   generateTableHead( $('#table')[0], data);
-  //   generateTable($('#table')[0], mountains);
-
   var boroughs_arr = $('#input-tags').get(0).selectize.getValue();
   var indicators_arr = $('#variables').get(0).selectize.getValue().split(',');
 
@@ -316,7 +293,7 @@ function reSetStyle(indicator){
   ];
 
   blkgrp_lowmod2015_muncipal.eachLayer(function (layer) {  
-    debugger;
+    
     var feature = layer.feature;
     // if(layer.feature.properties.NAME == 'feature 1') {    
       layer.setStyle(style(feature, indicator)) 
@@ -337,11 +314,13 @@ function reSetStyle(indicator){
     onEachFeature: function (feature, layer) {
 		
 			layer.on('click', function () {
+        
         // this.setStyle({'fillColor': 'green'});
 			  $('#details').addClass("show");
-        $('#details > .details-header')[0].innerHTML = `Municipality: ${feature.properties.Muncipality}`;
+        $('#details > .details-header')[0].innerHTML = `${feature.properties.Muncipality}`;
         $('#geo-location').html(`${feature.properties.Muncipality}`);
-        $('#low-mod-percent').text(`${(feature.properties.LowModPercentage * 100).toFixed(2)}%`);
+        $('.indicator-percent-1').text(`${(feature.properties.LowModPercentage * 100).toFixed(2)}%`);
+        $('.indicator-percent-2').text(`${feature.properties.Tot_Population_CEN_2010}%`);
         
        var t = d3.scaleLinear()
               .domain(domain_arr)
@@ -379,22 +358,17 @@ var map = L.map('map', {
 		layers: [streets, blkgrp_lowmod2015_muncipal]
   });
   
-  map.zoomControl.setPosition('bottomright');
-var baseLayers = {
-	"Grayscale": grayscale,
-  "Streets": streets,
-  "OSM": osm_lyr
-	};
+    map.zoomControl.setPosition('bottomright');
+  var baseLayers = {
+    "Grayscale": grayscale, 
+    "Streets": streets,
+    "OSM": osm_lyr
+    };
 
-var overlays = {
-      "Block Group Low Mod 2015 Muncipal": blkgrp_lowmod2015_muncipal
-	};
+  var overlays = {
+        "Block Group Low Mod 2015 Muncipal": blkgrp_lowmod2015_muncipal
+    };
 
   L.control.layers(baseLayers, overlays).addTo(map);
-//   var callBack = function () {
-//     console.log("Map successfully loaded");
-//     // do some stuff
-// };
-
-map.whenReady(()=>$('#cover').fadeOut(1000));
+    map.whenReady(()=>$('#cover').fadeOut(1000));
 });

@@ -82,11 +82,11 @@
         </a>
         <div class="dropdown-menu details" aria-labelledby="pagesDropdown" id="details">         
           <span id="close" class="close" onclick="close_panel(this)">x</span>
-          <p class="details-header">Municipality: Wilkinsburg</p>
+          <p class="details-header indicator-header-list"> Wilkinsburg</p>
           <hr/>
           <dl class="multiple-table">
-              <dt>Low Response Score:</dt>
-              <dd><p id="low-mod-percent" style="padding: 5px;">00.00%</p> </dd>
+              <dt><p class="indicator-lbl-1" style="padding:0 50px;">Low Response Score:</p> </dt>
+              <dd><p class="indicator-percent-1" style="padding: 5px;">00.00%</p> </dd>
           </dl>
           <figure>
               <div id="container">
@@ -98,10 +98,11 @@
               <hr class="hr-line"/>            
               <span>Block information </span>
               <dl class="multiple-table">            
-                  <dt>Zip Code:</dt>
-                  <dd>40.05% </dd>
-                  <dt>Population:</dt>
-                  <dd>40.05% </dd>
+                  <dt><p class="indicator-lbl-1" style="padding:0 50px;">Low Response Score:</p> </dt>
+                  <dd><p class="indicator-percent-1" style="padding: 5px;">00.00%</p> </dd>
+                  <dt><p class="indicator-lbl-2" style="padding:0 50px;">Population:</p> </dt>
+                  <dd><p class="indicator-percent-2" style="padding: 5px;">00.00%</p> </dd>
+                 
               </dl>
               <hr class="hr-line"/>      
               <!-- <dl class="multiple-table">            
@@ -130,12 +131,12 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="indicators" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-binoculars"></i>
-          <span>Indicators</span>
+          <span>Variables</span>
         </a>
         <div class="dropdown-menu details" aria-labelledby="indicators">
           <div id="indicator-demographic">
           <span class="close" onclick="close_panel(this)">x</span>
-          <h6 class="dropdown-header indicator-header-list">View Indicators</h6>
+          <h6 class="dropdown-header indicator-header-list">View Variables</h6>
            <hr class="hr-line"/> 
           <p class="block-info-header indicator-info">Select an indicator to view on the map. Expand indicator categories to see more. 
           </p>
@@ -733,7 +734,7 @@
           <h6 class="dropdown-header">Export:</h6>
         
         </div>
-      </li>
+      </li>-->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="about" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-question"></i>
@@ -743,7 +744,7 @@
           <h6 class="dropdown-header">About:</h6>
          
         </div>
-      </li>  -->
+      </li>  
     </ul>
 
     <div id="content-wrapper">
