@@ -309,6 +309,22 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   white-space: normal;
   font-size: 14px;
 }
+.btn-indicator-rnk{
+  width: 100px;
+  color: #fff;
+  background-color: #A6A6A6;
+  border-color: #A6A6A6;
+  white-space: normal;
+  font-size: 14px;
+}
+.btn-indicator-rnk:hover{
+  width: 100px;
+  color: #fff;
+  background-color: #A6A6A6;
+  border-color: #A6A6A6;
+  white-space: normal;
+  font-size: 14px;
+}
 .btn-ico{
   color: #fff;
   background-color: #E1B355;
@@ -378,7 +394,7 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
 .rank-btn-back {  
   float: left; 
   margin: 3px;
-  background: rgba(55, 172, 204, 0.84);
+  background-color: #2EA5AA;
   color: white;
   padding: 2px 8px;
   top: 0;
@@ -386,7 +402,7 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
 .rank-btn-back:hover{
   float: left; 
   margin: 3px;
-  background: rgba(55, 172, 204, 0.84);
+      border-color: #2EA5AA;
   color: white;
   padding: 2px 8px;
   top: 0;
@@ -522,7 +538,7 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   border-radius: 5px;
   border: 2px solid #ffffff;
   overflow-y: scroll;
-  max-height: 700px;
+  max-height: 550px;
   margin-top: -180px !important;
 }
 .upload-btn-wrapper {

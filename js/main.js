@@ -161,7 +161,7 @@ function generateTable(table, data) {
 
       var btn = document.createElement('input');
           btn.type = "button";
-          btn.className = "btn btn-indicator";
+          btn.className = "btn btn-indicator-rnk";
           btn.value = element[key] ? element[key]: 'No Data';
 
       // let text = document.createTextNode(element[key]);
