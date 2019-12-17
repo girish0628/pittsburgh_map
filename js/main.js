@@ -144,6 +144,7 @@ $.getJSON("data/indicators_qa.json",indicators_qa=>{
 });
 
 function generateTableHead(table, data) {
+  debugger
   let thead = table.createTHead();
   let row = thead.insertRow();
   for (let key of data) {
@@ -204,6 +205,8 @@ function rank_content(obj){
     var data = Object.keys(data_obj[0]);
     generateTableHead( $('#table')[0], boroughs_arr.replace(/ borough/g, '').split(','));
     generateTable($('#table')[0], data_obj);
+    var variable = variables.filter(({variable, label}) => variable === indicators_arr[i])[0].label
+    generateTableHead( $('#table')[0], ['Variable Name: ', variable, '']);
   }
 
 }

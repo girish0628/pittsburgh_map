@@ -741,7 +741,7 @@
           <i class="fa fa-question"></i>
           <span>About</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="about" style="height: 350px; width: 400px;">
+        <div class="dropdown-menu" aria-labelledby="about" style="height: 350px; width: 400px;background: #ffffffcf;">
           <h6 class="dropdown-header">About:</h6>
          
         </div>
@@ -759,7 +759,7 @@
       </div>     
 
       <!-- Sticky Footer -->
-      <footer class="sticky-footer">
+      <footer class="sticky-footer" style="left: 3%;width: 250px !important;">
         <div class="container-fluid my-auto">
           <div class="copyright text-right font-weight-bold my-auto">
             <span>Copyright © <img src="js/images/logo.png" class="logo"/>  </span>
@@ -830,25 +830,66 @@
 
   
     let muncipality, variables = [ 
-      {"variable":"Female_No_HB_CEN_2010"}, {"variable":"NH_White_alone_CEN_2010"},
-      {"variable":"Pop_65plus_CEN_2010"}, {"variable":"Rel_Under_6_CEN_2010"},
-      {"variable":"Males_CEN_2010"}, {"variable":"MrdCple_HHD_CEN_2010"}, 
-      {"variable":"Pop_25_44_CEN_2010"}, {"variable":"Vacant_Units_CEN_2010"}, 
-      {"variable":"College_ACS_10_14"}, {"variable":"Med_HHD_Inc_BG_ACS_10_14"}, 
-      {"variable":"Pop_45_64_CEN_2010"},{"variable":"Tot_Prns_in_HHD_CEN_2010"}, 
-      {"variable":"HHD_Moved_in_ACS_10_14"}, {"variable":"Hispanic_CEN_2010"}, 
-      {"variable":"Single_Unit_ACS_10_14"}, {"variable":"Tot_Population_CEN_2010"}, 
-      {"variable":"Prs_Blw_Pov_Lev_ACS_10_14"},  {"variable":"Diff_HU_1yr_Ago_ACS_10_14"}, 
-      {"variable":"Pop_5_17_CEN_2010"}, {"variable":"NH_Blk_alone_CEN_2010"}, 
-      {"variable":"Sngl_Prns_HHD_CEN_2010"}, {"variable":"Not_HS_Grad_ACS_10_14"}, 
-      {"variable":"Med_House_Value_BG_ACS_10_14"}, {"variable":"Low_Response_Score"}, 
-      {"variable":"Mail_Return_Rate_CEN_2010"}];
+      {"variable":"Female_No_HB_CEN_2010", "label": "Female"}, {"variable":"NH_White_alone_CEN_2010", "label": "White"},
+      {"variable":"Pop_65plus_CEN_2010", "label": "Adult 65+"}, {"variable":"Rel_Under_6_CEN_2010", "label": "Children Under 6"},
+      {"variable":"Males_CEN_2010", "label": "Males"}, {"variable":"MrdCple_HHD_CEN_2010", "label": "MrdCple_HHD_CEN_2010"}, 
+      {"variable":"Pop_25_44_CEN_2010", "label": "Pop_25_44_CEN_2010"}, {"variable":"Vacant_Units_CEN_2010", "label": "Vacancy"}, 
+      {"variable":"College_ACS_10_14", "label": "Graduate"}, {"variable":"Med_HHD_Inc_BG_ACS_10_14", "label": "Median Household Income"}, 
+      {"variable":"Pop_45_64_CEN_2010", "label": "Pop_45_64_CEN_2010"},{"variable":"Tot_Prns_in_HHD_CEN_2010", "label": "Tot_Prns_in_HHD_CEN_2010"}, 
+      {"variable":"HHD_Moved_in_ACS_10_14", "label": "Move after 2010"}, {"variable":"Hispanic_CEN_2010", "label": "Hispanic"}, 
+      {"variable":"Single_Unit_ACS_10_14", "label": "Single_Unit_ACS_10_14"}, {"variable":"Tot_Population_CEN_2010", "label": "Total Population"}, 
+      {"variable":"Prs_Blw_Pov_Lev_ACS_10_14", "label": "Below Poverty"},  {"variable":"Diff_HU_1yr_Ago_ACS_10_14", "label": "Diff_HU_1yr_Ago_ACS_10_14"}, 
+      {"variable":"Pop_5_17_CEN_2010", "label": "Pop_5_17_CEN_2010"}, {"variable":"NH_Blk_alone_CEN_2010", "label": "Black"}, 
+      {"variable":"Sngl_Prns_HHD_CEN_2010", "label": "Single Parent Household"}, {"variable":"Not_HS_Grad_ACS_10_14", "label": "Not High School Graduate"}, 
+      {"variable":"Med_House_Value_BG_ACS_10_14", "label": "Median Housing Value"}, {"variable":"Low_Response_Score", "label": "Low Response Score"}, 
+      {"variable":"Mail_Return_Rate_CEN_2010", "label": "Mail Return Rate"}
+      ];
 
       $.getJSON("data/blkgrp_lowmod2015_muncipal.geojson",blkgrp_data=>{
           muncipality = [...new Set(blkgrp_data.features.map(x => x.properties))]
       });
  
-      
+//       $('#select-repo').selectize({
+//     valueField: 'url',
+//     labelField: 'name',
+//     searchField: 'name',
+//     create: false,
+//     render: {
+//         option: function(item, escape) {
+//             return '<div>' +
+//                 '<span class="title">' +
+//                     '<span class="name"><i class="icon ' + (item.fork ? 'fork' : 'source') + '"></i>' + escape(item.name) + '</span>' +
+//                     '<span class="by">' + escape(item.username) + '</span>' +
+//                 '</span>' +
+//                 '<span class="description">' + escape(item.description) + '</span>' +
+//                 '<ul class="meta">' +
+//                     (item.language ? '<li class="language">' + escape(item.language) + '</li>' : '') +
+//                     '<li class="watchers"><span>' + escape(item.watchers) + '</span> watchers</li>' +
+//                     '<li class="forks"><span>' + escape(item.forks) + '</span> forks</li>' +
+//                 '</ul>' +
+//             '</div>';
+//         }
+//     },
+//     score: function(search) {
+//         var score = this.getScoreFunction(search);
+//         return function(item) {
+//             return score(item) * (1 + Math.min(item.watchers / 100, 1));
+//         };
+//     },
+//     load: function(query, callback) {
+//         if (!query.length) return callback();
+//         $.ajax({
+//             url: 'https://api.github.com/legacy/repos/search/' + encodeURIComponent(query),
+//             type: 'GET',
+//             error: function() {
+//                 callback();
+//             },
+//             success: function(res) {
+//                 callback(res.repositories.slice(0, 10));
+//             }
+//         });
+//     }
+// });
     $('#input-tags').selectize({
             valueField: 'Muncipality',
             labelField: 'Muncipality',
@@ -864,11 +905,17 @@
               if (!query.length) return callback();
               callback(muncipality);              
             },
-                    
+            score: function (search){
+                    return function (option){
+                      if (option.Muncipality.indexOf(search) === 0) return 1;
+                      
+                      return 0;
+                    }
+            }            
         });
         $('#variables').selectize({
             valueField: 'variable',
-            labelField: 'variable',
+            labelField: 'label',
             searchField: 'variable',
             persist: true,
             createOnBlur: true,	          
@@ -880,7 +927,14 @@
               if (!query.length) return callback();
              
               callback(variables);              
-            }               
+            },
+            score: function (search){
+                    return function (option){
+                      if (option.label.indexOf(search) === 0) return 1;
+                      
+                      return 0;
+                    }
+            }             
         });
 
         // $(window).load(function(){
