@@ -3,6 +3,7 @@ body {
     margin: 0;
     font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
 }
+
 html, body, #map {
     height: 100%;
     width: 100%;
@@ -294,20 +295,27 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
 }
 
 .btn-indicator{
-  width: 121px;
+  width: 85%;
   color: #fff;
   background-color: #A6A6A6;
   border-color: #A6A6A6;
   white-space: normal;
   font-size: 14px;
+  outline: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 .btn-indicator:hover{
-  width: 121px;
+  width: 85%;
   color: #fff;
   background-color: #A6A6A6;
   border-color: #A6A6A6;
   white-space: normal;
   font-size: 14px;
+  cursor: default; 
+  outline: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 .btn-indicator-rnk{
   width: 100px;
@@ -391,7 +399,8 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
 #demo-btn:focus{
   outline: none;
 }
-.rank-btn-back {  
+.rank-btn-back { 
+  font: inherit;
   float: left; 
   margin: 3px;
   background-color: #2EA5AA;
@@ -402,7 +411,7 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
 .rank-btn-back:hover{
   float: left; 
   margin: 3px;
-      border-color: #2EA5AA;
+  border-color: #2EA5AA;
   color: white;
   padding: 2px 8px;
   top: 0;
@@ -573,4 +582,28 @@ p.blocktext {
   padding: 20% 0;
   margin: auto;
   font-weight: bolder;
+}
+
+.indicator-tabs {
+  width: 100%;
+  overflow: hidden;
+ 
+  padding: 0;
+  margin: 0
+}
+.indicator-tabs  dt {
+  float: left;
+  width: 50%;
+  /* adjust the width; make sure the total of both is 100% */
+
+  padding: 0;
+  margin: 0
+}
+.indicator-tabs  dd {
+  float: left;
+  width: 50%;
+  /* adjust the width; make sure the total of both is 100% */
+
+  padding: 0;
+  margin: 0
 }

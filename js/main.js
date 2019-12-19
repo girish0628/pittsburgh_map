@@ -144,7 +144,7 @@ $.getJSON("data/indicators_qa.json",indicators_qa=>{
 });
 
 function generateTableHead(table, data) {
-  debugger
+  
   let thead = table.createTHead();
   let row = thead.insertRow();
   for (let key of data) {
