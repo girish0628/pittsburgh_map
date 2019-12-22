@@ -338,12 +338,14 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   background-color: #E1B355;
   border-color: #E1B355;
   width: 40px;
+  font-size: 14px;
 }
 .btn-ico:hover{
   color: #fff;
   background-color:  rgb(245, 156, 47);
   border-color: rgb(245, 156, 47);
   width: 40px;
+  font-size: 14px;
 }
 .btn-upload{
   color: #fff;
@@ -407,6 +409,8 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   color: white;
   padding: 2px 8px;
   top: 0;
+  font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 16px;
 }
 .rank-btn-back:hover{
   float: left; 
@@ -415,6 +419,8 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   color: white;
   padding: 2px 8px;
   top: 0;
+  font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  font-size: 16px;
 }
 .indicator-questions{
   font-size: medium;
