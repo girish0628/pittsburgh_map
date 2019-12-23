@@ -275,7 +275,7 @@ createContainer(20, 100, "#white");
 createContainer(20, 100, "#white-new");
 
 
-function style(feature, indicator="LowModPercentage") {
+function style(feature, indicator="Low Response Score") {
 	return {
 		fillColor: d3.scaleQuantize()
               .domain(domain_arr)
@@ -305,10 +305,10 @@ function reSetStyle(indicator){
 }
 
  // load GeoJSON from an external file
- $.getJSON("data/blkgrp_lowmod2015_muncipal.geojson",blkgrp_data=>{
+ $.getJSON("data/pdb_year_municipal_selected_var.geojson",blkgrp_data=>{
   domain_arr = [
-                d3.min(blkgrp_data.features, function(d) { return d.properties.LowModPercentage; }), 
-                d3.max(blkgrp_data.features, function(d) { return d.properties.LowModPercentage; })
+                d3.min(blkgrp_data.features, function(d) { return d.properties["Low Response Score"]; }), 
+                d3.max(blkgrp_data.features, function(d) { return d.properties["Low Response Score"]; })
               ];
 
 
@@ -322,12 +322,12 @@ function reSetStyle(indicator){
 			  $('#details').addClass("show");
         $('#details > .details-header')[0].innerHTML = `${feature.properties.Muncipality}`;
         $('#geo-location').html(`${feature.properties.Muncipality}`);
-        $('.indicator-percent-1').text(`${(feature.properties.LowModPercentage * 100).toFixed(2)}%`);
+        $('.indicator-percent-1').text(`${(feature.properties["Low Response Score"] * 100).toFixed(2)}%`);
         $('.indicator-percent-2').text(`${feature.properties.Tot_Population_CEN_2010}%`);
         
        var t = d3.scaleLinear()
               .domain(domain_arr)
-              .range([0, 200])(feature.properties.LowModPercentage);
+              .range([0, 200])(feature.properties["Low Response Score"]);
               // console.log(Math.round(t));
 
               $("#line-bar").css("margin-left", `${Math.round(t)}px`);
