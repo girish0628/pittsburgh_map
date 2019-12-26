@@ -339,6 +339,7 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   border-color: #E1B355;
   width: 40px;
   font-size: 14px;
+  padding: 5px 0;
 }
 .btn-ico:hover{
   color: #fff;
@@ -346,6 +347,7 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   border-color: rgb(245, 156, 47);
   width: 40px;
   font-size: 14px;
+  padding: 5px 0;
 }
 .btn-upload{
   color: #fff;
