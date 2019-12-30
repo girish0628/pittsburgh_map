@@ -334,10 +334,10 @@ function style(feature, indicator="Low Response Score") {
 function reSetStyle(indicator){
   
   var data_muncipality = blkgrp_lowmod2015_muncipal.toGeoJSON();
-  domain_arr = [
-    d3.min(data_muncipality.features, function(d) { return parseFloat(d.properties[indicator]); }),
-    d3.max(data_muncipality.features, function(d) { return parseFloat(d.properties[indicator]); })
-  ];
+  // domain_arr = [
+  //   d3.min(data_muncipality.features, function(d) { return parseFloat(d.properties[indicator]); }),
+  //   d3.max(data_muncipality.features, function(d) { return parseFloat(d.properties[indicator]); })
+  // ];
 
   blkgrp_lowmod2015_muncipal.eachLayer(function (layer) {  
     
@@ -350,21 +350,21 @@ function reSetStyle(indicator){
 
  // load GeoJSON from an external file
  $.getJSON("data/pdb_year_municipal_selected_var.geojson",blkgrp_data=>{
-  domain_arr = [
-                d3.min(blkgrp_data.features, function(d) { return d.properties["Low Response Score"]; }), 
-                d3.max(blkgrp_data.features, function(d) { return d.properties["Low Response Score"]; })
-              ];
+  // domain_arr = [
+  //               d3.min(blkgrp_data.features, function(d) { return d.properties["Low Response Score"]; }), 
+  //               d3.max(blkgrp_data.features, function(d) { return d.properties["Low Response Score"]; })
+  //             ];
 
-  domain_arr2 = blkgrp_data.features.map(function(d) {
-      let pdata = -1;
-        if (d.properties["Low Response Score"] == "")
-            pdata = -1.0;
-        else {
-            pdata = parseFloat(d.properties["Low Response Score"]);
-              if (pdata < 0.1) pdata = 0.1;
-        }
-        return pdata;
-    });
+  // domain_arr2 = blkgrp_data.features.map(function(d) {
+  //     let pdata = -1;
+  //       if (d.properties["Low Response Score"] == "")
+  //           pdata = -1.0;
+  //       else {
+  //           pdata = parseFloat(d.properties["Low Response Score"]);
+  //             if (pdata < 0.1) pdata = 0.1;
+  //       }
+  //       return pdata;
+  //   });
 
     blkgrp_lowmod2015_muncipal = L.geoJson(blkgrp_data, {style: style,
     onEachFeature: function (feature, layer) {
