@@ -10,7 +10,46 @@ var blkgrp_lowmod2015_muncipal;
 var blkgrp_lowmod2015_muncipal_data;
 
 
-
+function threshold_arr(indicator_val){
+  switch(indicator_val) {
+    case "White":
+      return [59.638, 81.206, 90.078, 96.100];
+    case "Black":
+      return [1.0, 2.632, 7.190, 27.166];
+    case "Hispanic":
+      return [0.500, 1.438, 3.480, 12.0];
+    case "Adult 65+":
+      return [10.836, 14.922, 18.414, 23.580];
+    case "18-24 years":
+      return [3.612, 5.592, 7.720, 11.850];
+    case "Under 6 yrs":
+      return [1.940, 3.690, 5.380, 7.958 ];
+    case "Single parent":
+      return [54.95, 72.66, 86.38, 95.94];
+    case "Below poverty":
+      return [3.37, 7.38, 13.10, 24.33];
+    case "No high school":
+      return [1.880, 4.110, 6.538, 10.814];
+    case "Median income":
+      return [34566.8, 47083.0, 58595.8, 76715.8];
+    case "Renter Occupied Units":
+      return [11.33, 25.54, 40.58, 59.84];
+    case "Vacant Units":
+      return [2.14, 6.45, 10.69, 18.07];
+    case "Move after 2010":
+      return [18.490, 26.604, 35.060, 45.486];
+    case "Housing value":
+      return [69460, 96720, 133120, 191520 ];
+    case "Graduate":
+      return [17.428, 26.764, 38.096, 55.658];
+    case "Total population":
+      return [648.8, 867.0, 1126.4, 1494.2];
+    case "Low Response Score":
+      return [10.2, 14.6, 18.7, 23.3];
+    default:
+      return [0, 20, 50, 90]
+  }
+}
 //var csv is the CSV file with headers
 function csv_to_JSON(csv){
   var lines=csv.split("\n");
@@ -277,9 +316,13 @@ createContainer(20, 100, "#white-new");
 
 function style(feature, indicator="Low Response Score") {
 	return {	
-		fillColor: d3.scaleQuantize()
-              .domain(domain_arr)
-              .range(color_array)(feature.properties[indicator]),
+		// fillColor: d3.scaleQuantize()
+    //           .domain(domain_arr)
+    //           .range(color_array)(feature.properties[indicator]),
+    fillColor: d3.scaleThreshold()
+        // .domain([17.428, 26.764, 38.096, 55.658])
+        .domain(threshold_arr(indicator))
+        .range(color_array)(feature.properties[indicator]),
 		weight: 2,
 		opacity: 1,
 		color: 'white',
@@ -312,7 +355,16 @@ function reSetStyle(indicator){
                 d3.max(blkgrp_data.features, function(d) { return d.properties["Low Response Score"]; })
               ];
 
-
+  domain_arr2 = blkgrp_data.features.map(function(d) {
+      let pdata = -1;
+        if (d.properties["Low Response Score"] == "")
+            pdata = -1.0;
+        else {
+            pdata = parseFloat(d.properties["Low Response Score"]);
+              if (pdata < 0.1) pdata = 0.1;
+        }
+        return pdata;
+    });
 
     blkgrp_lowmod2015_muncipal = L.geoJson(blkgrp_data, {style: style,
     onEachFeature: function (feature, layer) {
