@@ -616,3 +616,16 @@ p.blocktext {
   padding: 0;
   margin: 0
 }
+.line-bar-txt{  
+  padding: 0 5px;
+  margin: -20px;
+  font-size: 12px;
+  font-weight: bolder;
+  color: darkslategrey;
+}
+/* p.indicator-percent-3 {
+  margin-right: 70px;
+}
+p.indicator-percent-2 {
+  margin-right: 75px;
+} */

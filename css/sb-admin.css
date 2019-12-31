@@ -10890,7 +10890,7 @@ footer.sticky-footer {
   width: calc(100% - 90px);
   height: 30px;
   z-index: 100000;
-  left: 40px;
+  /* left: 40px; */
 }
 
 footer.sticky-footer .copyright {

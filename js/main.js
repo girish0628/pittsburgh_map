@@ -126,12 +126,12 @@ function handleFileSelect(evt) {
 
 }
 
-document.getElementById('files').addEventListener('change', handleFileSelect, false);
+// document.getElementById('files').addEventListener('change', handleFileSelect, false);
 
-function dataUploadPanel(){
-  $('#data-upload-panel').toggleClass('d-none'); 
-  $('#data-repo').toggleClass('d-none');
-}
+// function dataUploadPanel(){
+//   $('#data-upload-panel').toggleClass('d-none'); 
+//   $('#data-repo').toggleClass('d-none');
+// }
 
 
 function openCity(evt, cityName) {
@@ -363,25 +363,34 @@ function reSetStyle(indicator){
   //   });
 
     blkgrp_lowmod2015_muncipal = L.geoJson(blkgrp_data, {style: style,
-    onEachFeature: function (feature, layer) {
-		
+    onEachFeature: function (feature, layer) {      
 			layer.on('click', function () {
-        debugger;
+        var property = feature.properties;   
+        var indicator_txt_bar = `${(feature.properties[details_indicators]).toFixed(2)}`;
+        var indicator_value = ''
+       if((details_indicators === "Median income") || (details_indicators === "Housing value")){
+        indicator_value = `$${indicator_txt_bar}`;
+       }else{
+        indicator_value = `${indicator_txt_bar}%`;
+       }
+
         // this.setStyle({'fillColor': 'green'});
 			  $('#details').addClass("show");
-        $('#details > .details-header')[0].innerHTML = `${feature.properties.Muncipality}`;
-        $('#geo-location').html(`${feature.properties.Muncipality}`);
-        $('.indicator-percent-1').text(`${(feature.properties[details_indicators]).toFixed(2)}%`);
+        $('#details > .details-header')[0].innerHTML = `${property.Muncipality}`;
+        $('#geo-location').html(`${property.Muncipality}`);
+        $('.indicator-percent-1').text(indicator_value);
         $('.indicator-lbl-1').text(`${details_indicators}`);
-        $('.indicator-percent-2').text(`${feature.properties["Total population"]}`);
+        $('.line-bar-txt').text(`${indicator_txt_bar}`);
+        $('.indicator-percent-2').text(`${property["Total population"]}`);
+        $('.indicator-percent-3').text(`${property["Low Response Score"]}`);
         
       //  var t = d3.scaleLinear()
       //         .domain(threshold_arr(details_indicators))
-      //         .range([0, 200])(feature.properties[details_indicators]);
+      //         .range([0, 200])(property[details_indicators]);
               // console.log(Math.round(t));
         var interval_indicator = 0;
               threshold_arr(details_indicators).map((indi, index) =>{
-                feature.properties[details_indicators] < indi ? interval_indicator = (index + 1) * 40 : null;
+                property[details_indicators] < indi ? interval_indicator = (index + 1) * 40 : null;
               });
              
               $("#line-bar").css("margin-left", `${Math.round(interval_indicator)}px`);
@@ -394,7 +403,7 @@ function reSetStyle(indicator){
       //           d3.min(blkgrp_data.features, function(d) { return d.properties.LowMod; }), 
       //           d3.max(blkgrp_data.features, function(d) { return d.properties.LowMod; })
       //         ])
-      //         .range([0, 100])(feature.properties.LowMod);
+      //         .range([0, 100])(property.LowMod);
       //         // console.log(Math.round(t));
 
       //         $("#poverty-bar").css("margin-left", `${Math.round(t)}px`);

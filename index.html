@@ -91,7 +91,9 @@
           </dl>
           <figure>
               <div id="container">
-                <div id="line-bar" class="line-bar"></div>              
+                <div id="line-bar" class="line-bar">
+                  <div class="line-bar-txt">0.0</div>
+                </div>              
               </div> 
               <figcaption>Score Percentile</figcaption>
             </figure>
@@ -105,11 +107,17 @@
                   <dd><p class="indicator-percent-2" style="padding: 5px;">00.00%</p> </dd>
                  
               </dl> -->
-              <dl class="indicator-tabs">
-                <dt><p class="indicator-lbl-1" style="padding:0 50px;">Low Response Score:</p> </dt>
-                <dd><p class="indicator-percent-1">00.00%</p> </dd>
+              <!-- <dl class="indicator-tabs">
+                <dt><p class="indicator-lbl-3" style="padding:0 50px;">Low Response Score:</p> </dt>
+                <dd><p class="indicator-percent-3">00.00%</p> </dd>
                 <dt><p class="indicator-lbl-2">Population:</p> </dt>
-                <dd><p class="indicator-percent-2" >00.00%</p> </dd>
+                <dd><p class="indicator-percent-2" >00.00</p> </dd>
+              </dl> -->
+              <dl class="multiple-table">
+                <dt style="margin-bottom: -19px;"><p class="indicator-lbl-3" style="padding:0 50px;">Low Response Score:</p> </dt>
+                <dd style="margin-bottom: -19px;"><p class="indicator-percent-3" style="padding: 5px;">00.00%</p> </dd>
+                <dt><p class="indicator-lbl-3" style="padding:0 50px;">Population:</p> </dt>
+                <dd><p class="indicator-percent-2" style="padding: 5px;">00.00</p> </dd>
               </dl>
               <hr class="hr-line"/>      
               <!-- <dl class="multiple-table">            
@@ -650,7 +658,7 @@
               </div>
         </div>
         </li> 
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dataupload" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-cloud-upload"></i>
           <span>Data Upload</span>
@@ -686,8 +694,7 @@
               </div>
                    
                 
-             <!-- <hr class="hr-line"/> -->
-             <!-- <button type="button" class="btn btn-indicator-list rank-btn" onclick="rank_content(this)">Submit</button>     -->
+            
           </div>         
           
               <div class="container d-none" id="data-upload-panel">
@@ -732,7 +739,7 @@
                 <button type="button" class="btn btn-indicator-list rank-btn-back" onclick="dataUploadPanel()">Back</button>
             </div>
             <hr class="hr-line"/>   
-        </li>
+        </li> -->
       <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="report" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-file-pdf-o"></i>
@@ -748,7 +755,8 @@
           <i class="fa fa-question"></i>
           <span>About</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="about" style="height: 500px; width: 800px;margin-top: -150% !important;background: #ffffffcf;">
+        <div class="dropdown-menu" aria-labelledby="about" 
+        style="height: 44vw;background: rgba(255, 255, 255, 0.81);position: absolute;will-change: transform;width: 90vw;margin-top: -10vw;top: 0px;left: 0px;">
           <h6 class="dropdown-header">About:</h6>
          
         </div>
@@ -766,10 +774,11 @@
       </div>     
 
       <!-- Sticky Footer -->
-      <footer class="sticky-footer" style="left: 3%;width: 250px !important;">
+      <footer class="sticky-footer" style="right: 3%;width: 250px !important;">
         <div class="container-fluid my-auto">
           <div class="copyright text-right font-weight-bold my-auto">
-            <span>Copyright © <img src="js/images/logo.png" class="logo"/>  </span>
+            <!-- <span>Copyright © <img src="js/images/logo.png" class="logo"/>  </span> -->
+            <span>Copyright © вєαmdαtα 2019</span>
               <!-- вєαm dαtα survєч 2019 -->
           </div>
         </div>
