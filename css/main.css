@@ -278,6 +278,7 @@ dl.multiple-table dd.first { border-top: 1px solid #999; }
   height: 55px;
   width: 2px;
   margin-top: -5px;
+  margin-left: 0px;
   transition: all 1s 10ms;
   /* display: none; */
 }

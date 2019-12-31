@@ -8,7 +8,7 @@
 
 var blkgrp_lowmod2015_muncipal;
 var blkgrp_lowmod2015_muncipal_data;
-
+let details_indicators="Low Response Score";
 
 function threshold_arr(indicator_val){
   switch(indicator_val) {
@@ -308,10 +308,6 @@ function createContainer(...args){
   });  
 }
 createContainer(40, 200, "#container");
-createContainer(20, 100, "#poverty");
-createContainer(20, 100, "#poverty-new");
-createContainer(20, 100, "#white");
-createContainer(20, 100, "#white-new");
 
 
 function style(feature, indicator="Low Response Score") {
@@ -332,8 +328,8 @@ function style(feature, indicator="Low Response Score") {
 }
 
 function reSetStyle(indicator){
-  
-  var data_muncipality = blkgrp_lowmod2015_muncipal.toGeoJSON();
+  details_indicators = indicator;
+  // var data_muncipality = blkgrp_lowmod2015_muncipal.toGeoJSON();
   // domain_arr = [
   //   d3.min(data_muncipality.features, function(d) { return parseFloat(d.properties[indicator]); }),
   //   d3.max(data_muncipality.features, function(d) { return parseFloat(d.properties[indicator]); })
@@ -370,31 +366,38 @@ function reSetStyle(indicator){
     onEachFeature: function (feature, layer) {
 		
 			layer.on('click', function () {
-        
+        debugger;
         // this.setStyle({'fillColor': 'green'});
 			  $('#details').addClass("show");
         $('#details > .details-header')[0].innerHTML = `${feature.properties.Muncipality}`;
         $('#geo-location').html(`${feature.properties.Muncipality}`);
-        $('.indicator-percent-1').text(`${(feature.properties["Low Response Score"]).toFixed(2)}%`);
+        $('.indicator-percent-1').text(`${(feature.properties[details_indicators]).toFixed(2)}%`);
+        $('.indicator-lbl-1').text(`${details_indicators}`);
         $('.indicator-percent-2').text(`${feature.properties["Total population"]}`);
         
-       var t = d3.scaleLinear()
-              .domain(domain_arr)
-              .range([0, 200])(feature.properties["Low Response Score"]);
+      //  var t = d3.scaleLinear()
+      //         .domain(threshold_arr(details_indicators))
+      //         .range([0, 200])(feature.properties[details_indicators]);
               // console.log(Math.round(t));
+        var interval_indicator = 0;
+              threshold_arr(details_indicators).map((indi, index) =>{
+                feature.properties[details_indicators] < indi ? interval_indicator = (index + 1) * 40 : null;
+              });
+             
+              $("#line-bar").css("margin-left", `${Math.round(interval_indicator)}px`);
+              // $("#line-bar").css("display", `inline-block`); 
+              // $("#line-bar").css("margin-left", `${Math.round(t)}px`);
+              
 
-              $("#line-bar").css("margin-left", `${Math.round(t)}px`);
-              // $("#line-bar").css("display", `inline`);   
+      //  var t = d3.scaleLinear()
+      //         .domain([
+      //           d3.min(blkgrp_data.features, function(d) { return d.properties.LowMod; }), 
+      //           d3.max(blkgrp_data.features, function(d) { return d.properties.LowMod; })
+      //         ])
+      //         .range([0, 100])(feature.properties.LowMod);
+      //         // console.log(Math.round(t));
 
-       var t = d3.scaleLinear()
-              .domain([
-                d3.min(blkgrp_data.features, function(d) { return d.properties.LowMod; }), 
-                d3.max(blkgrp_data.features, function(d) { return d.properties.LowMod; })
-              ])
-              .range([0, 100])(feature.properties.LowMod);
-              // console.log(Math.round(t));
-
-              $("#poverty-bar").css("margin-left", `${Math.round(t)}px`);
+      //         $("#poverty-bar").css("margin-left", `${Math.round(t)}px`);
               // $("#line-bar").css("display", `inline`);   
      
 			});
